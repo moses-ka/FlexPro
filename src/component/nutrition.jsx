@@ -2,7 +2,7 @@
 
 const Nutrition = ()=>{
   return (<>
-             <div className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12">
+      <section id='nutrition' className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12">
         <div className="flex flex-col justify-center items-center gap-4 bg-slate-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl ">
           <h1>Nutrition</h1>
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-slate-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl   ">
@@ -55,7 +55,7 @@ const Nutrition = ()=>{
             <p className="w-full ml-8 font-light text-black" > 20% 30% 40% 50% 10-15% </p>
           </div>
         </div>
-      </div>
+      </section>
      
       <section className=" flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12">
       <div className="flex flex-col justify-center items-center gap-4 bg-slate-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl"> 
