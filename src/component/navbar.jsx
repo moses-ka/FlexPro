@@ -5,6 +5,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { IoIosFitness } from "react-icons/io";
 import { BiHomeHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
+
 const  Navbar = ()=> {
   return (
     <>
