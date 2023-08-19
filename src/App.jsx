@@ -1,14 +1,15 @@
 
-import { Outlet } from 'react-router-dom';
-import AddTask from './component/comp/addTask.jsx';
-import Navbar from './component/navbar';
+// import { Outlet } from 'react-router-dom';
 
+import Navbar from './component/navbar';
+import Home from './component/home';
 const App = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
-  
+      <Home />
+      {/* <Outlet /> */}
+
     </>
   );
 }

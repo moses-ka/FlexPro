@@ -1,6 +1,7 @@
 //fitness.jsx
 import { useState } from "react";
 import AddTask from "./comp/addTask";
+import Navbar from "./navbar";
 const Fitness = () => {
   const [openAccordion, setOpenAccordion] = useState([
     false,
@@ -26,6 +27,7 @@ const Fitness = () => {
 
   return (
     <>
+      <Navbar />
       <section
         id="accordion"
         className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12"
