@@ -2,13 +2,16 @@
 // import { Outlet } from 'react-router-dom';
 
 import Navbar from './component/navbar';
-import Home from './component/home';
+// import Home from './component/home';
+// import LoginSignup from './component/loginSignup';
+import LandingPage from './component/landingPage';
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Home />
-      {/* <Outlet /> */}
+      {/* <Navbar /> */}
+      {/* <LoginSignup /> */}
+      {/* <Home /> */}
+      <LandingPage/>
 
     </>
   );
