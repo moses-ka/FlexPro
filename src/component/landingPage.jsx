@@ -21,12 +21,12 @@ export default function LandingPage() {
             className="flex justify-center items-center gap-6 "
           >
             <Link to="/nutrition">
-              <span className="text-white text-center text-2xl font-['Raleway']">
+              <span className="text-white text-center text-2xl font-['Raleway'] hover:text-[#6000fc] ">
                 Nutrition
               </span>
             </Link>
             <Link to="/fitness">
-              <span className="text-white text-center text-2xl font-['Raleway']">
+              <span className="text-white text-center text-2xl font-['Raleway']  hover:text-[#6000fc]">
                 Fitness
               </span>
             </Link>
