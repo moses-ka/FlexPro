@@ -5,6 +5,7 @@ import {BiSolidUserCircle} from 'react-icons/bi';
 import {FiArrowLeft} from "react-icons/fi";
 import { useNavigate } from 'react-router';
 import Cookies from 'js-cookie';
+import Navbar from './navbar';
 
 export default function LoginSignup() {
   const  [user,setUser]=useState(null);
@@ -52,6 +53,7 @@ export default function LoginSignup() {
       )
   } else if (user === null || user === undefined){
     return (<>
+    <Navbar />
       <section id="login-signup" className='flex flex-col justify-center items-center p-6 drop-shadow-xl  h-screen  bg-black'>
         <div className='flex  flex-col justify-center items-center 
             gap-6 bg-gray-400 rounded-[50px]  p-6 w-full md:w-3/6 h-full

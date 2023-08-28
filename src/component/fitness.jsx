@@ -1,15 +1,26 @@
 //fitness.jsx
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import AddTask from "./comp/addTask";
 import Navbar from "./navbar";
+import {useNavigate} from "react-router";
+import Cookies from "js-cookie";
 const Fitness = () => {
+  const navigate = useNavigate();
   const [openAccordion, setOpenAccordion] = useState([
     false,
     false,
     false,
     false,
   ]);
-
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const cookie = Cookies.get("token");
+    if (cookie !== undefined && cookie !== null) {
+      setUser(cookie);
+    } else {
+      navigate("/login");
+    }
+  }, []);
 
   const Accordion = (num) => {
     console.log(openAccordion);
@@ -24,9 +35,13 @@ const Fitness = () => {
       return newArray;
     });
   };
+  
+   
+ 
 
   return (
     <>
+    
       <Navbar />
       <section
         id="accordion"
@@ -235,6 +250,7 @@ const Fitness = () => {
         </div>
       </section>
     </>
-  );
+  )
+ 
 };
 export default Fitness;
