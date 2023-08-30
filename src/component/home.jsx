@@ -5,24 +5,22 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="flex w-full flex-col justify-center 
-         p-6 drop-shadow-xl mb-12 "
+        className="flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen"
       >
         <div
-          className="flex  flex-col justify-center items-center 
-            gap-8 bg-gray-400 rounded-[50px]  p-6 w-full h-full
-             lg:w-auto drop-shadow-xl  "
+          className="flex flex-col justify-evenly items-center gap-6 bg-gray-600 rounded-[50px] p-4 w-full h-5/6 mt-2  drop-shadow-xl   "
         >
           <div
-            className="h-[140px] hover:scale-[102%]
+            className="h-2/6 
               flex justify-center items-center hover:delay-150 
               bg-my-firstImg bg-cover bg-center bg-no-repeat  bg-gray-50 rounded-[50px]
-                      w-full group"
+                      w-5/6 group transform hover:scale-110 transition duration-500"
+                    
           >
-           
+          
             <span
               className=" text-center text-black
-                          font-serif   hidden group-hover:inline hover:delay-150 blur-none 
+                          font-serif  font-extrabold inline lg:hidden  group-hover:inline hover:delay-150 blur-none 
                            text-4xl"
             >
               Workout
@@ -30,15 +28,15 @@ export default function Home() {
           </div>
 
           <div
-            className="h-[140px] hover:scale-[102%] 
+            className="h-2/6  
             flex justify-center items-center
                  hover:delay-150 bg-my-thirdImg bg-cover bg-center
                  bg-no-repeat  rounded-[50px] 
-                      w-full group"
+                      w-5/6 group transform hover:scale-110 transition duration-500"
           >
             <span
               className=" text-center text-black
-                          font-serif   hidden group-hover:inline hover:delay-150 blur-none 
+                          font-serif font-extrabold   inline lg:hidden  group-hover:inline hover:delay-150 blur-none 
                            text-4xl"
             >
               nutrition
@@ -46,13 +44,13 @@ export default function Home() {
           </div>
 
           <div
-            className="h-[140px] hover:scale-[102%] 
+            className="h-2/6 
                  flex justify-center items-center
                  hover:delay-150 bg-my-secImg bg-cover bg-center
                  bg-no-repeat  rounded-[50px]
-                      w-full group "
+                      w-5/6 group transform hover:scale-110 transition duration-500 "
           >
-               <span  className=" text-center text-black font-serif   hidden group-hover:inline hover:delay-150 blur-none  text-4xl" 
+               <span  className=" text-center font-extrabold text-black font-serif    inline lg:hidden group-hover:inline hover:delay-150 blur-none  text-4xl" 
             >
               Recipes
             </span>

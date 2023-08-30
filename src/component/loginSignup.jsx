@@ -21,7 +21,9 @@ export default function LoginSignup() {
   const handleCallBackResponse = (response)=>{
   
         const userObj = jwtDecode(response.credential);
-        Cookies.set('token',userObj);
+       const  userString = JSON.stringify(userObj);
+        console.log(userString);
+        Cookies.set('token',userString);
         Navigate ("/nutrition");
     }
    
@@ -54,24 +56,20 @@ export default function LoginSignup() {
   } else if (user === null || user === undefined){
     return (<>
     <Navbar />
-      <section id="login-signup" className='flex flex-col justify-center items-center p-6 drop-shadow-xl  h-screen  bg-black'>
-        <div className='flex  flex-col justify-center items-center 
-            gap-6 bg-gray-400 rounded-[50px]  p-6 w-full md:w-3/6 h-full
-             drop-shadow-xl '>
-
-                <div className='flex flex-col justify-center items-center gap-6 '>
+      <section id="login-signup" className='flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen'>
+        <div className='flex flex-col justify-center items-center gap-4 bg-gray-600 rounded-[50px] p-6 w-full h-5/6 mt-2 lg:w-auto drop-shadow-xl  '>
              
                     <h1 className='text-4xl font-serif text-center'>Welcome to  Flex Pro</h1>
                     <span className='text-xl font-serif text-center'> Are you ready to embark on a journey towards a healthier, fitter
               you?</span>
                     <BiSolidUserCircle size={100} className=' drop-shadow-xl hover:text-[#6000fc]' />
                     <h2 className='text-2xl text-center'> Log in</h2>
-                </div>
+       
                 <div id='signInDiv' className=' drop-shadow-xl'>
             {/* {googleLogin} */}
                 </div>
                     <FiArrowLeft size={50} onClick={()=>{ Navigate("/")}}
-                     className=' md:mt-14 text-lg animate-bounce hover:text-[#6000fc]'/>
+                     className='mt-20 text-lg animate-bounce hover:text-[#6000fc]'/>
         </div>
     </section>
     </>)

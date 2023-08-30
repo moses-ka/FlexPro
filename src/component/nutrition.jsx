@@ -7,7 +7,7 @@ import ProtienCalories from "./protienCalories";
 import { useState,useEffect } from "react";
 import LoginSignup from "./loginSignup";
 import Cookies from 'js-cookie';
-import jwtDecode from "jwt-decode";
+
 import { useNavigate } from "react-router";
 
 const Nutrition = () => {
