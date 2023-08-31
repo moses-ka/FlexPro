@@ -35,7 +35,7 @@ const  Navbar = ()=> {
               </Link>
             </li>
             <li className="list-none">
-              <Link to="/">
+              <Link to="/home">
                 {
                   <BiHomeHeart
                     className=" text-[#D1C8DE]  hover:text-gray-50 lg:h-20"

@@ -16,7 +16,7 @@ export default function Profile() {
         id="profile"
         className="flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen"
       >
-        <div className="flex flex-col justify-center items-center gap-4 bg-gray-600 rounded-[50px] p-4 w-full h-5/6 mt-2  drop-shadow-xl ">
+        <div className="flex flex-col justify-center items-center gap-4 bg-gray-600 rounded-[50px] p-4 w-full md:w-3/5 h-5/6 mt-2  drop-shadow-xl ">
           <div className="flex flex-col justify-center items-center gap-4  bg-gray-200 rounded-[50px] h-52 p-4 w-5/6  drop-shadow-xl ">
             <BiSolidUserCircle
               size={80}

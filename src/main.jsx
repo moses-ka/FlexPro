@@ -8,12 +8,14 @@ import Fitness from './component/fitness';
 import LoginSignup from './component/loginSignup';
 import Profile from './component/profile';
 import Account from './component/account';
+import LandingPage from './component/landingPage';
 ReactDOM.createRoot(document.getElementById('root')).render(
   
   
     <Router>
       <Routes>
-        <Route path="/" element={<App />}/>
+          <Route path='/' element={<LandingPage/>} />
+          <Route path="/home" element={<App />}/>
           <Route path="/fitness" element={<Fitness />} />
           <Route path="/nutrition" element={<Nutrition />} />
           <Route path="/login" element={<LoginSignup />} />
