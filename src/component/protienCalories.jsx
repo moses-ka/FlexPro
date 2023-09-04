@@ -7,6 +7,7 @@ import {
 } from '@tanstack/react-query'
 import { MdAddTask } from "react-icons/md";
 import Nutrition from "./nutrition";
+import { BiFoodMenu } from "react-icons/bi";
 
 export default function ProtienCalories() {
   const [search, setSearch] = useState("");
@@ -17,6 +18,7 @@ export default function ProtienCalories() {
   const [foodPerDay, setFoodPerDay] = useState([]);
   const [varitionIndex, setVaritionIndex] = useState(0);
   const queryClient = useQueryClient()
+  const [totalIntake, setTotalIntake] = useState({ protein: 0, carbs: 0, calories: 0 }); // State to hold the total intake
 
   const { data: nutrition, isError, isLoading } = useQuery(
     ['goods'], // Specify a unique query key
@@ -68,11 +70,35 @@ const handSelectingFood = (e) => {
   const AddFood = () => {
     setFoodPerDay([
       ...foodPerDay,
-      selectedVariation , multiplier
+      selectedVariation 
       
     ])
-  } 
+    
+  }
 
+const sumValues = (foodItems) => {
+  return foodItems.reduce((total, item) => {
+    // Extract the numeric value from the string using regex
+    const proteinValue = parseFloat(item.protein.match(/\d+/)[0]);
+    const carbsValue = parseFloat(item.carbs.match(/\d+/)[0]);
+    const caloriesValue = parseFloat(item.calories.match(/\d+/)[0]);
+
+    // Sum the values
+    total.protein += proteinValue;
+    total.carbs += carbsValue;
+    total.calories += caloriesValue;
+
+    return total;
+  }, { protein: 0, carbs: 0, calories: 0 });
+};
+
+
+useEffect(() => {
+  const newTotalIntake = sumValues(foodPerDay); // Calculate the new total intake
+  setTotalIntake(newTotalIntake); // Update the total intake state
+
+}, [foodPerDay]);
+console.log(totalIntake);
   return (
     <section
       id="intake"
@@ -135,10 +161,27 @@ const handSelectingFood = (e) => {
           {selectedFood && selectedVariation && (
             <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
               <span className="text-black w-fit text-sm">
-
+              <h2 className="text-black text-center text-lg">Protein</h2>
               {foodPerDay.map((item, index) => (
                 <div key={index}>
-                  {item.name} {item.calories} {item.protein} 
+              
+                  {item.name} {item.protein} 
+                  
+                </div>
+              ))
+            }
+              </span>
+              </div>
+          )}
+               
+               {selectedFood && selectedVariation && (
+            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+              <span className="text-black w-fit text-sm">
+              <h2 className="text-black text-center text-lg">Kcal</h2>
+              {foodPerDay.map((item, index) => (
+                <div key={index}>
+              
+                  {item.name} {item.calories} 
                 </div>
               ))}
               </span>
