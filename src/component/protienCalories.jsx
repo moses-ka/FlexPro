@@ -46,7 +46,13 @@ export default function ProtienCalories() {
   const handlIndex = (e) => {
     setIndex(e.target.value);
     setSelectedFood(nutrition[e.target.value]); // Update selected food item
-     setSelectedVariation(nutrition[e.target.value].items[varitionIndex]); // the app crashes when it set to idex that doesnt exisit 
+    if (nutrition[e.target.value].items.length > 0)
+      setSelectedVariation(nutrition[e.target.value].items[0]); 
+    else if (nutrition[e.target.value].items.length > 1) {
+      setVaritionIndex(0);
+    }
+    // if the selected vairation has exist 
+    // in the diffrent food section it chose it othwise it set it to 0
 
   };
 
@@ -116,8 +122,8 @@ console.log(selectedVariation ,"selectedVariation")
            
             <input type="number" min={1} max={9} onChange={(e) => setMultiplier(e.target.value)} 
             value={multiplier}
-            className="text-black  w-1/6  rounded-2xl p-2  bg-gray-300  "/>
-             <MdAddTask onClick={AddFood} size={42} className="text-black p-1 w-1/6"/>
+            className="text-black  w-2/6  rounded-2xl p-2  bg-gray-300  "/>
+             <MdAddTask onClick={AddFood} size={38} className="text-black p-1 w-1/6 text-center"/>
           </div>
         )}
 
@@ -127,8 +133,8 @@ console.log(selectedVariation ,"selectedVariation")
               <span className="text-black w-fit text-sm">
 
               {foodPerDay.map((item, index) => (
-                <div key={index}>
-                  {item.name}
+                <div key={index} className="text-sm">
+                  {item.name} {item.calories} {item.protein} {item.carbs}
                 </div>
               ))}
               </span>
