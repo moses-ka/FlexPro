@@ -6,6 +6,7 @@ import {
   useQueryClient
 } from '@tanstack/react-query'
 import { MdAddTask } from "react-icons/md";
+import Nutrition from "./nutrition";
 
 export default function ProtienCalories() {
   const [search, setSearch] = useState("");
@@ -39,33 +40,39 @@ export default function ProtienCalories() {
     }
   }, [nutrition]);
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
 
-  const handlIndex = (e) => {
-    setIndex(e.target.value);
-    setSelectedFood(nutrition[e.target.value]); // Update selected food item
-    if (nutrition[e.target.value].items.length > 0)
-      setSelectedVariation(nutrition[e.target.value].items[0]); 
-    else if (nutrition[e.target.value].items.length > 1) {
-      setVaritionIndex(0);
-    }
-    // if the selected vairation has exist 
-    // in the diffrent food section it chose it othwise it set it to 0
 
-  };
+const handSelectingFood = (e) => {
+  setIndex(e.target.value);
+  setSelectedFood(nutrition[e.target.value]); // Update selected food item
 
-console.log(selectedVariation ,"selectedVariation")
+  if (nutrition[e.target.value].items.length >= varitionIndex ) {
+    setSelectedVariation(nutrition[e.target.value].items[varitionIndex]);
+  } 
+  else if(nutrition[e.target.value].items.length > 0) {
+    setSelectedVariation(nutrition[e.target.value]?.items[0]);
+  }
+};
+
+  const handleSelectingVaration = (e) => {
+    // console.log( e.target.value, "e.target.value")
+      // Handle the selection here
+      const Index = e.target.value;
+      setSelectedVariation(selectedFood.items[Index]) 
+   
+      setVaritionIndex(Index)
+    
+  }
+
+
   const AddFood = () => {
     setFoodPerDay([
       ...foodPerDay,
-      selectedVariation
+      selectedVariation , multiplier
       
     ])
   } 
-  console.log(selectedVariation ,"selectedVariation")
-  console.log(selectedFood ,"selectedFood")
+
   return (
     <section
       id="intake"
@@ -84,8 +91,8 @@ console.log(selectedVariation ,"selectedVariation")
             className="text-black w-62 w-full rounded-2xl p-2 bg-gray-300"
             name="meal"
             id="meal"
-            onChange={handlIndex}
-            onSelect={handlIndex}
+            onChange={handSelectingFood}
+            
           >
             {nutrition?.map((el, index) => (
               <option key={index} value={index}>
@@ -105,17 +112,14 @@ console.log(selectedVariation ,"selectedVariation")
               className="text-black w-62 w-full text-sm rounded-2xl p-2 bg-gray-300"
               name="specificMeal"
               id="specificMeal"
-              onChange={(e) => {
-                // Handle the selection here
-                const selectedItemIndex = e.target.value;
-                setSelectedVariation(selectedFood.items[selectedItemIndex]) 
-                console.log(selectedVariation ,'selectedVariation');
-                setVaritionIndex(selectedItemIndex)
-              }}
+              onChange={handleSelectingVaration}
+              defaultValue={'select'}
+            
             >
+             {/* <option value="" selected disabled hidden>Choose here</option> */}
               {selectedFood.items.map((item, index) => (
-                <option className="text-sm" key={index} value={index}>
-                  {item.name} {item.calories}
+                <option  className="text-sm" key={index} value={index}>
+                  {item.name} {item.protein} 
                 </option>
               ))}
             </select>
@@ -133,8 +137,8 @@ console.log(selectedVariation ,"selectedVariation")
               <span className="text-black w-fit text-sm">
 
               {foodPerDay.map((item, index) => (
-                <div key={index} className="text-sm">
-                  {item.name} {item.calories} {item.protein} {item.carbs}
+                <div key={index}>
+                  {item.name} {item.calories} {item.protein} 
                 </div>
               ))}
               </span>
