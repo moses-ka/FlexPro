@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { FcSearch } from "react-icons/fc";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient
-} from '@tanstack/react-query'
+
+import { useQuery,useQueryClient} from '@tanstack/react-query'
 import { MdAddTask } from "react-icons/md";
-import Nutrition from "./nutrition";
-import { BiFoodMenu } from "react-icons/bi";
+import Cookies from "js-cookie";
+import {MdDelete} from "react-icons/md"
 
 export default function ProtienCalories() {
-  const [search, setSearch] = useState("");
+ 
   const [index, setIndex] = useState(0);
   const [multiplier, setMultiplier] = useState(1);
   const [selectedFood, setSelectedFood] = useState(null); // Store the selected food item
   const [selectedVariation, setSelectedVariation] = useState(null);
   const [foodPerDay, setFoodPerDay] = useState([]);
   const [varitionIndex, setVaritionIndex] = useState(0);
-  const queryClient = useQueryClient()
+  const [FoodPerDayMultiplier, setFoodPerDayMultiplier] = useState([]);
   const [totalIntake, setTotalIntake] = useState({ protein: 0, carbs: 0, calories: 0 }); // State to hold the total intake
+  const [showInputs, setShowInputs] = useState(false);
+  const [protein,setProtein,] = useState("");
+  const [carbs,setCarbs,] = useState("");
+  const [kcal,setKcal,] = useState("");
+  const [meal,setMeal,] = useState("");
+  const queryClient = useQueryClient()
 
   const { data: nutrition, isError, isLoading } = useQuery(
     ['goods'], // Specify a unique query key
@@ -68,37 +70,98 @@ const handSelectingFood = (e) => {
 
 
   const AddFood = () => {
-    setFoodPerDay([
-      ...foodPerDay,
-      selectedVariation 
-      
-    ])
-    
-  }
+    setFoodPerDay([...foodPerDay, selectedVariation]);
+    setFoodPerDayMultiplier([...FoodPerDayMultiplier, multiplier]);
+  
+    // Store data in cookies with an expiration time of one day
+    Cookies.set("foodPerDay", JSON.stringify([...foodPerDay, selectedVariation]), { expires: 1 });
+    Cookies.set("FoodPerDayMultiplier", JSON.stringify([...FoodPerDayMultiplier, multiplier]), { expires: 1 });
+  };
+  
+  
 
 const sumValues = (foodItems) => {
-  return foodItems.reduce((total, item) => {
-    // Extract the numeric value from the string using regex
-    const proteinValue = parseFloat(item.protein.match(/\d+/)[0]);
-    const carbsValue = parseFloat(item.carbs.match(/\d+/)[0]);
-    const caloriesValue = parseFloat(item.calories.match(/\d+/)[0]);
+  return foodItems.reduce((total, item, index) => {
+    const proteinMatch = item.protein.match(/\d+/);
+    const carbsMatch = item.carbs.match(/\d+/);
+    const caloriesMatch = item.calories.match(/\d+/);
 
-    // Sum the values
-    total.protein += proteinValue;
-    total.carbs += carbsValue;
-    total.calories += caloriesValue;
+    console.log(`Protein Match for item ${index}:`, proteinMatch);
+    console.log(`Carbs Match for item ${index}:`, carbsMatch);
+    console.log(`Calories Match for item ${index}:`, caloriesMatch);
+
+    // Check if matches are valid before parsing
+    if (proteinMatch && proteinMatch[0] && carbsMatch && carbsMatch[0] && caloriesMatch && caloriesMatch[0]) {
+      const proteinValue = parseFloat(proteinMatch[0]) * FoodPerDayMultiplier[index];
+      const carbsValue = parseFloat(carbsMatch[0]) * FoodPerDayMultiplier[index];
+      const caloriesValue = parseFloat(caloriesMatch[0]) * FoodPerDayMultiplier[index];
+
+      console.log(`Parsed Protein Value for item ${index}:`, proteinValue);
+      console.log(`Parsed Carbs Value for item ${index}:`, carbsValue);
+      console.log(`Parsed Calories Value for item ${index}:`, caloriesValue);
+
+      total.protein += proteinValue;
+      total.carbs += carbsValue;
+      total.calories += caloriesValue;
+    }
 
     return total;
   }, { protein: 0, carbs: 0, calories: 0 });
 };
 
+  
 
-useEffect(() => {
-  const newTotalIntake = sumValues(foodPerDay); // Calculate the new total intake
+
+
+    useEffect(() => {
+const newTotalIntake = sumValues(foodPerDay); // Calculate the new total intake
   setTotalIntake(newTotalIntake); // Update the total intake state
 
 }, [foodPerDay]);
-console.log(totalIntake);
+
+  useEffect(() => {
+  // Retrieve data from cookies
+  const foodList = Cookies.get("foodPerDay");
+  const foodListMultiplier = Cookies.get("FoodPerDayMultiplier");
+
+  // Parse the retrieved data from cookies
+  const parsedFoodList = foodList ? JSON.parse(foodList) : [];
+  const parsedFoodListMultiplier = foodListMultiplier ? JSON.parse(foodListMultiplier) : [];
+
+  // Set the retrieved data to their corresponding states
+  setFoodPerDay(parsedFoodList);
+  setFoodPerDayMultiplier(parsedFoodListMultiplier);
+}, []);
+
+  const deleteFoodItem = (index) => {
+  // Create a copy of foodPerDay and FoodPerDayMultiplier arrays
+  const updatedFoodPerDay = [...foodPerDay];
+  const updatedFoodPerDayMultiplier = [...FoodPerDayMultiplier];
+
+  // Remove the item at the specified index
+  updatedFoodPerDay.splice(index, 1);
+  updatedFoodPerDayMultiplier.splice(index, 1);
+
+  // Update state with the new arrays
+  setFoodPerDay(updatedFoodPerDay);
+  setFoodPerDayMultiplier(updatedFoodPerDayMultiplier);
+
+  // Save the updated data to cookies
+  Cookies.set("foodPerDay", JSON.stringify(updatedFoodPerDay), { expires: 1 });
+  Cookies.set("FoodPerDayMultiplier", JSON.stringify(updatedFoodPerDayMultiplier), { expires: 1 });
+};
+
+const handleCustomEntry = () => { // adding custom entry to the array of food per day 
+  const customMeal = {
+    name: meal,
+    protein: protein,
+    carbs: carbs,
+    calories: kcal
+  }
+  setFoodPerDay([...foodPerDay, customMeal]);
+  setFoodPerDayMultiplier([...FoodPerDayMultiplier,1]);
+}
+console.log(protein);
   return (
     <section
       id="intake"
@@ -111,10 +174,11 @@ console.log(totalIntake);
 
         <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
           <label className="text-black w-16" htmlFor="meal">
-            Eggs
+            Meal
           </label>
+        
           <select
-            className="text-black w-62 w-full rounded-2xl p-2 bg-gray-300"
+            className="w-4/6 rounded-2xl p-2 bg-gray-300"
             name="meal"
             id="meal"
             onChange={handSelectingFood}
@@ -126,6 +190,13 @@ console.log(totalIntake);
               </option>
             ))}
           </select>
+          ||
+          <button className="text-center text-sm font-['Raleway']
+                        font-bold capitalize text-black rounded-[50px]
+                         w-28 p-4 bg-white hover:text-[#6000fc]
+                         transform hover:scale-110 transition duration-500" onClick={()=> setShowInputs(!showInputs)}>
+           Custom Entry
+            </button>
         </div>
 
         {/* Render variations of the selected food item */}
@@ -135,55 +206,119 @@ console.log(totalIntake);
               
             </label> */}
             <select
-              className="text-black w-62 w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-5/6 text-sm rounded-2xl p-2 bg-gray-300"
               name="specificMeal"
               id="specificMeal"
               onChange={handleSelectingVaration}
-              defaultValue={'select'}
+              defaultValue='0'
             
             >
-             {/* <option value="" selected disabled hidden>Choose here</option> */}
+             
               {selectedFood.items.map((item, index) => (
                 <option  className="text-sm" key={index} value={index}>
                   {item.name} {item.protein} 
                 </option>
               ))}
             </select>
-           
+           ||
             <input type="number" min={1} max={9} onChange={(e) => setMultiplier(e.target.value)} 
             value={multiplier}
-            className="text-black  w-2/6  rounded-2xl p-2  bg-gray-300  "/>
-             <MdAddTask onClick={AddFood} size={38} className="text-black p-1 w-1/6 text-center"/>
+            className="text-black  w-2/6  rounded-2xl p-2  bg-gray-300  "/>    <button 
+            onClick={AddFood}
+            className="text-center text-sm font-['Raleway']
+                          font-bold capitalize text-black rounded-[50px]
+                           w-28 p-4 bg-white hover:text-[#6000fc]
+                           transform hover:scale-110 transition duration-500">Add</button>
+             {/* <MdAddTask onClick={AddFood} size={38} className="text-black p-1 w-1/6 text-center hover:text-[#6000fc]
+                         transform hover:scale-110 transition duration-500"/> */}
           </div>
         )}
-
+         {showInputs && (
+        <div className="flex flex-col md:flex-row justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
+          <input
+            type="text"
+            placeholder="Enter name"
+            className="text-black w-5/6 md:w-full rounded-2xl p-2 bg-gray-300 "
+            onChange={(e) => setMeal(e.target.value)}
+          />
+           <input
+            type="number"
+            placeholder="Enter protein"
+            className="text-black w-5/6 md:w-full rounded-2xl p-2 bg-gray-300"
+            onChange={(e) => setProtein(e.target.value)}
+          />
+           <input
+            type="number"
+            placeholder="Enter kcal"
+            className="text-black w-5/6 md:w-full rounded-2xl p-2 bg-gray-300"
+            onChange={(e) => setKcal(e.target.value)}
+          />
+            <input
+            type="number"
+            placeholder="Enter carbs"
+            className="text-black w-5/6 md:w-full rounded-2xl p-2 bg-gray-300"
+            onChange={(e) => setCarbs(e.target.value.toString())}
+          />
+          <button 
+          onClick={handleCustomEntry}
+          className="text-center text-sm font-['Raleway']
+                        font-bold capitalize text-black rounded-[50px]
+                         w-28 p-4 bg-white hover:text-[#6000fc]
+                         transform hover:scale-110 transition duration-500">Add</button>
+        </div>
+             )}
+            
          
           {selectedFood && selectedVariation && (
-            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
               <span className="text-black w-fit text-sm">
               <h2 className="text-black text-center text-lg">Protein</h2>
               {foodPerDay.map((item, index) => (
                 <div key={index}>
               
-                  {item.name} {item.protein} 
+              {item.name} {parseFloat(item.protein.match(/\d+/)[0]) * FoodPerDayMultiplier[index]}
+                            {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
+
+                <button onClick={() => deleteFoodItem(index)} className="text-black hover:text-red-700 text-center">
+                <MdDelete size={20} />
+                </button>
+                 
                   
                 </div>
               ))
             }
+             total : {totalIntake.protein}
               </span>
               </div>
           )}
                
                {selectedFood && selectedVariation && (
-            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
               <span className="text-black w-fit text-sm">
               <h2 className="text-black text-center text-lg">Kcal</h2>
               {foodPerDay.map((item, index) => (
                 <div key={index}>
               
-                  {item.name} {item.calories} 
+              {item.name} {parseFloat(item.calories.match(/\d+/)[0]) * FoodPerDayMultiplier[index]}
+              {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
                 </div>
               ))}
+              total = {totalIntake.calories}
+              </span>
+              </div>
+          )}
+             {selectedFood && selectedVariation && (
+            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
+              <span className="text-black w-fit text-sm">
+              <h2 className="text-black text-center text-lg">carbs</h2>
+              {foodPerDay.map((item, index) => (
+                <div key={index}>
+              
+              {item.name} {parseFloat(item.carbs.match(/\d+/)[0]) * FoodPerDayMultiplier[index]}
+              {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
+                </div>
+              ))}
+              total = {totalIntake.carbs}
               </span>
               </div>
           )}
