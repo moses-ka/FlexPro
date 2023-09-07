@@ -1,7 +1,7 @@
 //nutrition.jsx
 
 
-import CalProtien from "./calProtien"
+import IntakeCalcaulator from "./calProtien"
 import Navbar from "./navbar";
 import ProtienCalories from "./protienCalories";
 import { useState,useEffect } from "react";
@@ -23,7 +23,7 @@ const Navigate = useNavigate();
       <>
         <div className="flex flex-col gap-4 ">
         <Navbar />
-        <CalProtien />
+        <IntakeCalcaulator />
         <ProtienCalories />
         </div>
       </>

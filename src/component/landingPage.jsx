@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiArrowUp } from "react-icons/fi";
@@ -34,7 +35,7 @@ export default function LandingPage() {
               className="text-center text-2xl font-['Raleway']
                         font-bold capitalize text-black rounded-3xl
                          w-24 bg-white hover:text-[#6000fc]
-                         transform hover:scale-110 transition duration-500"
+                         transform hover:scale-110 transition duration-500 border hover:border-[#6000fc]"
             >
               Login
             </Link>
@@ -64,7 +65,7 @@ export default function LandingPage() {
               className="text-center text-2xl font-['Raleway']
                         font-bold capitalize text-black rounded-3xl
                          w-28 bg-white hover:text-[#6000fc]
-                         transform hover:scale-110 transition duration-500"
+                         transform hover:scale-110 transition border hover:border-[#6000fc] duration-500"
             >
               start
             </Link>
@@ -104,7 +105,7 @@ export default function LandingPage() {
 
               <img
                 src="https://images.pexels.com/photos/7991936/pexels-photo-7991936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                className=" w-5/6 h-full lg:w-3/6 transform hover:scale-105 transition duration-500"
+                className=" w-5/6 h-full lg:w-3/6 transform hover:scale-105 transition duration-500  grayscale"
                 id="Image3"
               />
             </div>
@@ -114,7 +115,7 @@ export default function LandingPage() {
             >
               <img
                 src="https://images.pexels.com/photos/949131/pexels-photo-949131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                className="w-5/6 h-full lg:w-3/6 transform hover:scale-105 transition duration-500 "
+                className="w-5/6 h-full lg:w-3/6 transform hover:scale-105 transition duration-500 grayscale   "
                 id="Image2"
               />
               <div className=" flex flex-col justify-center items-center w-2/6">
@@ -187,7 +188,7 @@ export default function LandingPage() {
             <button
               className="text-center text-xl font-['Raleway'] font-bold 
             capitalize bg-white rounded-3xl w-32 text-black p-2
-            transform hover:scale-110 transition duration-500 hover:text-[#6000fc] "
+            transform hover:scale-110 transition duration-500 border hover:border-[#6000fc] hover:text-[#6000fc] "
             >
               Submit
             </button>
@@ -202,6 +203,22 @@ export default function LandingPage() {
             }}
           />
         </div>
+        <div className="flex flex-col md:flex-row  justify-center items-center">
+        <img
+              src="https://file.rendit.io/n/x71t4g9TJWktoYkEISBD.png"
+              className="w-28 h-28  "
+              id="FlexPro logo"
+            />
+        <span className="text-sm text-center text-white w-4/6  md:w-3/6 m-4">
+             <strong>Disclaimer </strong> 
+             Disclaimer: This protein intake calculation is based on general guidelines from reputable sources,
+              including ISSN. It offers estimated daily protein requirements for fitness enthusiasts, considering age,
+               gender, activity level, and weight goals. Note that this estimate may not be 100% accurate.
+                Consult a healthcare professional for personalized advice.
+
+        </span>
+        </div>
+      
       </div>
     </section>
   );
