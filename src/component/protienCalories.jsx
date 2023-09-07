@@ -183,7 +183,7 @@ export default function ProtienCalories() {
     setFoodPerDay([...foodPerDay, customMeal]);
     setFoodPerDayMultiplier([...FoodPerDayMultiplier, 1]);
   };
-  console.log(protein);
+ 
   return (
     <section
       id="intake"
@@ -294,7 +294,7 @@ export default function ProtienCalories() {
           </div>
         )}
 
-        {selectedFood && selectedVariation && (
+        {foodPerDay.length !== 0 && (
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
             <div className="text-black w-fit text-sm flex flex-col">
               <h2 className="text-black text-center text-lg">Protein</h2>
@@ -326,7 +326,7 @@ export default function ProtienCalories() {
           </div>
         )}
 
-        {selectedFood && selectedVariation && (
+        {foodPerDay.length !== 0 && selectedVariation && (
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
             <div className="text-black w-fit text-sm flex flex-col">
               <h2 className="text-black text-center text-lg">Kcal</h2>
@@ -344,24 +344,28 @@ export default function ProtienCalories() {
             </div>
           </div>
         )}
-        {selectedFood && selectedVariation && (
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <div className="text-black w-fit text-sm flex flex-col">
-              <h2 className="text-black text-center text-lg">carbs</h2>
-              {foodPerDay.map((item, index) => (
-                <div className="flex justify-center items-center gap-2" key={index}>
-                  {item.name}{" "}
-                  {parseFloat(item.carbs.match(/\d+/)[0]) *
-                    FoodPerDayMultiplier[index]}(gr)
-                  {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
-                </div>
-              ))}
-                 <span className="text-black text-center self-center">
-                Total of {totalIntake.carbs} grams
-                </span>
+    {foodPerDay.length !== 0 && (
+      <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
+        <div className="text-black w-fit text-sm flex flex-col">
+          <h2 className="text-black text-center text-lg">carbs</h2>
+          {foodPerDay.map((item, index) => (
+            <div className="flex justify-center items-center gap-2" key={index}>
+              {item.name}{" "}
+              {parseFloat(item.carbs.match(/\d+/)[0]) *
+                FoodPerDayMultiplier[index]}(gr)
+              {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
             </div>
-          </div>
-        )}
+          ))}
+          <span className="text-black text-center self-center">
+            Total of {totalIntake.carbs} grams
+          </span>
+        </div>
+      </div>
+    )}
+    
+     
+      
+       
       </div>
     </section>
   );
