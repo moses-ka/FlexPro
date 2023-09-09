@@ -1,11 +1,11 @@
 //nutrition.jsx
 
 
-import IntakeCalcaulator from "./calProtien"
+import IntakeCalcaulator from "./intakeCalculator"
 import Navbar from "./navbar";
 import ProtienCalories from "./protienCalories";
 import { useState,useEffect } from "react";
-import LoginSignup from "./loginSignup";
+// import LoginSignup from "./loginSignup";
 import Cookies from 'js-cookie';
 
 import { useNavigate } from "react-router";

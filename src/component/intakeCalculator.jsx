@@ -5,7 +5,7 @@ export default function IntakeCalculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [gender, setGender] = useState('male');
-  const [fat, setFat] = useState(10);
+  // const [fat, setFat] = useState(10);
   const [activityLevel, setActivityLevel] = useState(1.2);
   const [goal, setGoal] = useState('maintain');
   const [dailyCalories, setDailyCalories] = useState(0); // State for daily calories
@@ -80,11 +80,11 @@ export default function IntakeCalculator() {
         <h1>Nutrition</h1>
         <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm" htmlFor="age">
+            <label className="text-black w-16 text-sm " htmlFor="age">
               Age
             </label>
             <input
-              className="w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
               placeholder="Age"
               type="number"
               min="14"
@@ -102,7 +102,7 @@ export default function IntakeCalculator() {
               Weight
             </label>
             <input
-              className="w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
               placeholder="Weight (kg)"
               type="number"
               min="40"
@@ -120,7 +120,7 @@ export default function IntakeCalculator() {
               Height
             </label>
             <input
-              className="w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
               placeholder="Height (cm)"
               type="number"
               min="130"
@@ -138,7 +138,7 @@ export default function IntakeCalculator() {
               Gender
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
               name="gender"
               id=""
               required
@@ -150,12 +150,12 @@ export default function IntakeCalculator() {
               <option value="female">Female</option>
             </select>
           </div>
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+          {/* <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
             <label className="text-black w-16 text-sm" htmlFor="bodyFat">
               Fat %
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
               name="bodyFat"
               id=""
               required
@@ -167,13 +167,13 @@ export default function IntakeCalculator() {
               <option value="20">Normal</option>
               <option value="30">Overweight</option>
             </select>
-          </div>
+          </div> */}
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
             <label className="text-black w-16 text-sm" htmlFor="activityLevel">
               Activity
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
               name="activityLevel"
               id=""
               required
@@ -193,7 +193,7 @@ export default function IntakeCalculator() {
               Goal
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
               name="goal"
               id=""
               required
