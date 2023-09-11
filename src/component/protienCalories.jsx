@@ -31,7 +31,7 @@ export default function ProtienCalories() {
     async () => {
       const res = await fetch("http://localhost:3012/nutrition");
       const data = await res.json();
-      console.log("fetched been called");
+      // console.log("fetched been called");
       return data;
     },
     {

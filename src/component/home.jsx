@@ -1,6 +1,19 @@
 import React from "react";
-
+import { useEffect,useState } from "react";
+import { useNavigate } from "react-router";
+import Cookies from "js-cookie";
 export default function Home() {
+  const [user, setUser] = useState(null);
+  const Navigate = useNavigate();
+  useEffect(() => {
+    const cookie = Cookies.get("token");
+    if (cookie !== undefined && cookie !== null) {
+      setUser(cookie);
+     
+    } else {
+      navigate("/login");
+    }
+  },[]);
   return (
     <>
       <section

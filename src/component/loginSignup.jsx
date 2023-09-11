@@ -24,7 +24,7 @@ export default function LoginSignup() {
        const  userString = JSON.stringify(userObj);
         console.log(userString);
         Cookies.set('token',userString);
-        Navigate ("/nutrition");
+        Navigate ("/profile");
     }
    
         

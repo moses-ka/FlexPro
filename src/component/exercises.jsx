@@ -16,7 +16,7 @@ export default function Exercises() {
     async () => {
       const res = await fetch("http://localhost:3014/exercises");
       const data = await res.json();
-      console.log("fetched been called");
+      // console.log("fetched been called");
       return data;
     },
     {
@@ -37,7 +37,7 @@ export default function Exercises() {
       return newArray;
     });
   };
-  console.log(exercises , 'exercises');
+  // console.log(exercises , 'exercises');
   return (
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
       <div className='flex flex-col  items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>

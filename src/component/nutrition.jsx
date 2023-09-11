@@ -13,12 +13,15 @@ import { useNavigate } from "react-router";
 const Nutrition = () => {
 const [user,setUser]=useState(null);
 const Navigate = useNavigate();
- useEffect(()=>{
-  const cookie = Cookies.get('token')
-  setUser(cookie);
- },[])
+useEffect(() => {
+  const cookie = Cookies.get("token");
+  if (cookie !== undefined && cookie !== null) {
+    setUser(cookie);
+  } else {
+    navigate("/login");
+  }
+}, []);
  
-  if (user !== null && user !== undefined) {
     return (
       <>
         <div className="flex flex-col gap-4 ">
@@ -28,12 +31,7 @@ const Navigate = useNavigate();
         </div>
       </>
     );
-  }
-  else if(user == null || user == undefined){ 
- 
-      Navigate("/login");
-  
-    return null
-  }
 }
+ 
+
 export default Nutrition;

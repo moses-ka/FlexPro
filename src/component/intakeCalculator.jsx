@@ -78,7 +78,7 @@ export default function IntakeCalculator() {
     >
       <div className="flex flex-col justify-center items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl">
         <h1>Nutrition</h1>
-        <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
+        <form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
             <label className="text-black w-16 text-sm " htmlFor="age">
               Age

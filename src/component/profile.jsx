@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import Navbar from "./navbar";
 import { BiSolidUserCircle } from "react-icons/bi";
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
@@ -6,9 +6,21 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 export default function Profile() {
-  const user = Cookies.get("token");
-  const userObj = JSON.parse(user);
+  const [user, setUser] = useState(null);
+  const [userObj, setUserObj] = useState(null);
+ 
   const Navigate = useNavigate();
+  useEffect(() => {
+    const cookie = Cookies.get("token");
+    if (cookie !== undefined && cookie !== null) {
+      setUser(cookie);
+      const parsedCookie = JSON.parse(cookie);
+      setUserObj(parsedCookie);
+    } else {
+      navigate("/login");
+    }
+  },[]);
+  // console.log(user , 'user ');
   return (
     <>
       <Navbar />
@@ -23,7 +35,7 @@ export default function Profile() {
               className="hover:text-[#6000fc]
                          transform hover:scale-110 transition duration-500"
             />
-            <span className="text-xl font-bold"> {userObj.name}</span>
+            <span className="text-xl font-bold"> {userObj?.name}</span>
             <span className="text-xl "> // level 1</span>
           </div>
              {/* <Link className="w-full" to="/setting">
