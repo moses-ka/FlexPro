@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery } from "@tanstack/react-query";
+import Loading from './loading';
 export default function Workoutplan() {
 const [openAccordion,setOpenAccordion] = useState([false,false,false,]);
 const [startFlex,setStartFlex] = useState()
 const [superFlex,setSuperflex] = useState()
     const {
-        data:workOutPlan,
+        data:workOutPlan,isLoading,
       } = useQuery(
         ["workoutplan"], // Specify a unique query key
         async () => {
           const res = await fetch("http://localhost:3014/exercises/workoutplan");
           const data = await res.json();
-          console.log("fetched been called and this is the data",data);
+          // console.log("fetched been called and this is the data",data);
           setStartFlex(data[0])
           setSuperflex(data[1])
           return data;
@@ -47,8 +48,10 @@ const [superFlex,setSuperflex] = useState()
   return (
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12 w-full '>
       <div className='flex flex-col  items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl'>
-
-  
+      {isLoading && <Loading />}
+      {!isLoading && (<>
+      
+     
             <h2 className='text-2xl lg:text-4xl font-bold text-center text-black '>{startFlex?.name}</h2>
             <span className='text-center self-center text-sm w-6/6'>{startFlex?.description}</span>
             <div
@@ -385,6 +388,7 @@ const [superFlex,setSuperflex] = useState()
               )}
             </div>
           </div>
+          </>)}
           </div>
           
     </section>

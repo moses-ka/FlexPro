@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 // import { MdAddTask } from "react-icons/md";
 import Cookies from "js-cookie";
 import { MdDelete } from "react-icons/md";
+import Loading from "./loading";
 
 export default function ProtienCalories() {
   // const [index, setIndex] = useState(0);
@@ -25,7 +26,7 @@ export default function ProtienCalories() {
   // const queryClient = useQueryClient();
 
   const {
-    data: nutrition,
+    data: nutrition,isLoading,
   } = useQuery(
     ["goods"], // Specify a unique query key
     async () => {
@@ -189,13 +190,20 @@ export default function ProtienCalories() {
       id="intake"
       className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12"
     >
+        
       <div className="flex flex-col justify-center items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl">
+      {isLoading && (<Loading />) }
+          {!isLoading && (<>
         <h2>Protein and Calories</h2>
 
         <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
           {/* <label className="text-black w-16" htmlFor="meal">
             Meal
           </label> */}
+
+         
+
+         
           <select
             className="w-4/6 rounded-2xl  border border-[#6000fc] p-2 bg-gray-300"
             name="meal"
@@ -218,8 +226,9 @@ export default function ProtienCalories() {
           >
             Custom
           </button>
+   
         </div>
-
+        
         {/* Render variations of the selected food item */}
         {selectedFood && (
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
@@ -365,8 +374,9 @@ export default function ProtienCalories() {
     
      
       
-       
+    </>)}
       </div>
+      
     </section>
   );
 }

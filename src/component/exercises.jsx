@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import { useQuery } from '@tanstack/react-query';
+import Loading from './loading';
 export default function Exercises() {
   const [openAccordion, setOpenAccordion] = useState([
     false,
@@ -10,7 +11,7 @@ export default function Exercises() {
     false,
   ]);
   const {
-    data: exercises,
+    data: exercises, isLoading,
   } = useQuery(
     ["exercises"], // Specify a unique query key
     async () => {
@@ -42,6 +43,11 @@ export default function Exercises() {
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
       <div className='flex flex-col  items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>
       <h2 className="text-2xl font-bold text-center">Exercises</h2>
+      {isLoading && <Loading/>}
+      {!isLoading &&(<>
+    
+
+      
           <div
             id="accordion-collapse"
             data-accordion="collapse"
@@ -378,6 +384,7 @@ export default function Exercises() {
               )}
             </div>
           </div>
+          </> )}
       </div>
      
     </section>

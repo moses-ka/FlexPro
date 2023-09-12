@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import Navbar from './navbar'
 import axios from 'axios'
 import { useQuery } from "@tanstack/react-query";
+import Loading from './loading';
 export default function Account() {
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
@@ -10,24 +11,27 @@ export default function Account() {
   const [gender, setGender] = useState('male');
   const [updatAcount, setUpdatAcount] = useState(false);
   const {
-    data: userData,
+    data: userData,refetch: refetchUserData, isLoading , // Use refetch to manually refetch data
   } = useQuery(
     ["userData"], // Specify a unique query key
     async () => {
       const res = await fetch(`http://localhost:3016/users/${user?.name}`);
       const data = await res.json();
-      // console.log("fetched been called");
+      // console.log("fetched been called" , data);
       return data;
     },
     {
       refetchOnMount: false,
       staleTimeout: 1000 * 60 * 60,
       refetchOnWindowFocus: false,
+      manual: true,
     }
   );
+  
 
     const user = JSON.parse(Cookies.get("token"))
     const handleSubmit = async(e) => {
+     
       e.preventDefault();
         axios.put(`http://localhost:3016/users/${user?.name}`, {
           name: user.name,
@@ -40,22 +44,48 @@ export default function Account() {
    
         })
         .then( (response) => {
-          console.log(response);
+          // console.log(response);
+
         })
         .catch( (error) => {
           console.log(error);
         });
-    
+        setUpdatAcount(!updatAcount)
+        setTimeout(() => {
+          refetchUserData()
+        }, 1000)
     }
   return (<>
     <Navbar />
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen'>
-        <div className='flex flex-col justify-center items-center gap-2 bg-gray-600 rounded-[50px] p-4 w-full h-full  lg:w-auto drop-shadow-xl '>
-
-        <img className='rounded-full' src={user.picture} alt="" />
-        <span className='text-xl font-bold'>{user.name}</span>
-        <span>{user.email}</span>
-
+        <div className='flex flex-col justify-center items-center gap-2 bg-gray-600 rounded-[50px] p-4 w-full h-full md:w-3/5 mt-2 drop-shadow-xl '>
+     
+        <img className='rounded-full' src={user?.picture} alt="" />
+        <span className='text-2xl font-bold'>{user?.name}</span>
+        {isLoading && (
+         <Loading />
+        )}
+       {updatAcount !== true && userData && isLoading == false && (
+         <div className='flex flex-col justify-center items-center gap-2 w-full'>
+        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-5/6 h-10  drop-shadow-xl'>
+        {user?.email}
+        </div>
+      
+        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        Age {userData?.age}
+        </div>
+        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        Weight {userData?.weight}
+        </div>
+     
+        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        Height {userData?.height}
+        </div>
+        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        Gender {userData?.gender}
+        </div>
+        </div>
+        )}
        {updatAcount == true && (
        <div className='w-full'>
        <form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
@@ -155,26 +185,27 @@ export default function Account() {
        
        )} 
        <button 
-        className="text-center text-xl font-['Raleway'] p-4
-        font-bold capitalize text-black rounded-3xl
+        className="text-center text-xl font-['Raleway'] h-12 p-2 md:p-4 md:h-16
+        font-bold capitalize text-black rounded-3xl 
                       w-42 bg-green-400 hover:text-white  
-                      transform hover:scale-110 transition duration-500"
+                      transform hover:scale-110 transition duration-500 border hover:border-[#6000fc]"
                       onClick={() => {
                         setUpdatAcount(!updatAcount);
                       }}
       > change account info</button>
+      {updatAcount !== true &&(
        <button
-        className="text-center text-xl font-['Raleway'] p-4
+        className="text-center text-xl font-['Raleway'] h-12 p-2 md:p-4 md:h-16
         font-bold capitalize text-black rounded-3xl
                      w-42 bg-red-400 hover:text-white
-                     transform hover:scale-110 transition duration-500"
+                     transform hover:scale-110 border hover:border-[#6000fc] transition duration-500"
                      onClick={() => {
          
                        Navigate("/");
                       }}
       >
         delete account
-      </button>
+      </button>)}
       </div>
     </section>
        </>

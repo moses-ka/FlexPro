@@ -36,7 +36,7 @@ export default function Profile() {
                          transform hover:scale-110 transition duration-500"
             />
             <span className="text-xl font-bold"> {userObj?.name}</span>
-            <span className="text-xl "> // level 1</span>
+            {/* <span className="text-xl "> // level 1</span> */}
           </div>
              {/* <Link className="w-full" to="/setting">
           <div className="flex justify-between items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl    ">
