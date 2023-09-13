@@ -1,8 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import { FiArrowUp } from "react-icons/fi";
+import axios from "axios";
 export default function LandingPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+   const submitMessage = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:3016/users/contact", {
+      name: name,
+      email: email,
+      message: message,
+    });
+    window.alert("Thank you for your message!");
+   }
   return (
     <section id="landing-page" className="bg-black  w-screen">
       <div className=" flex flex-col gap-6 w-full items-center justify-center">
@@ -19,16 +32,16 @@ export default function LandingPage() {
             />
           </div>
           <div id="links" className="flex justify-center items-center gap-6 ">
-            <Link to="/nutrition">
+            <a  href="/#weOffer">
               <span className="text-white text-center text-xl font-['Raleway'] hover:text-[#6000fc] transform hover:scale-110 transition duration-500">
                 Nutrition
               </span>
-            </Link>
-            <Link to="/fitness">
+            </a>
+            <a  href="/#Image2">
               <span className="text-white text-center text-xl font-['Raleway'] transform  transition duration-500  hover:text-[#6000fc]">
                 Fitness
               </span>
-            </Link>
+            </a>
 
             <Link
               to="/login"
@@ -113,7 +126,7 @@ export default function LandingPage() {
               className="flex justify-evenly items-center flex-col sm:w-full lg:flex-row
              md:justify-center  lg:w-5/6 p-6 gap-6 w-4/6"
             >
-              <img
+              <img 
                 src="https://images.pexels.com/photos/949131/pexels-photo-949131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 className="w-5/6 h-full lg:w-3/6 transform hover:scale-105 transition duration-500 grayscale   "
                 id="Image2"
@@ -175,17 +188,23 @@ export default function LandingPage() {
               id="name"
               className=" group w-4/6 p-2 rounded-3xl"
               placeholder="Name"
+              onChange={(e) => {setName(e.target.value)}}
             />
             <input
-              type="text"
+              type="email"
               className="w-4/6 p-2 rounded-3xl"
               placeholder="Email"
+              onChange={(e) => {setEmail(e.target.value)}}
             />
             <textarea
               className="w-4/6 p-2  h-32 rounded-3xl"
               placeholder="Message"
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
             />
             <button
+            onClick={submitMessage}
               className="text-center text-xl font-['Raleway'] font-bold 
             capitalize bg-white rounded-3xl w-32 text-black p-2
             transform hover:scale-110 transition duration-500 border hover:border-[#6000fc] hover:text-[#6000fc] "

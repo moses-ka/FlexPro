@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 import Navbar from './navbar'
 import axios from 'axios'
 import { useQuery } from "@tanstack/react-query";
-import Loading from './loading';
+import Loading from './loading'
 export default function Account() {
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
@@ -63,7 +63,7 @@ export default function Account() {
         <img className='rounded-full' src={user?.picture} alt="" />
         <span className='text-2xl font-bold'>{user?.name}</span>
         {isLoading && (
-         <Loading />
+         <Loading />  
         )}
        {updatAcount !== true && userData && isLoading == false && (
          <div className='flex flex-col justify-center items-center gap-2 w-full'>
@@ -185,9 +185,7 @@ export default function Account() {
        
        )} 
        <button 
-        className="text-center text-xl font-['Raleway'] h-12 p-2 md:p-4 md:h-16
-        font-bold capitalize text-black rounded-3xl 
-                      w-42 bg-green-400 hover:text-white  
+        className="flex justify-center items-center gap-2 lg:gap-10 bg-green-200 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl hover:text-[#6000fc]  
                       transform hover:scale-110 transition duration-500 border hover:border-[#6000fc]"
                       onClick={() => {
                         setUpdatAcount(!updatAcount);
@@ -197,7 +195,7 @@ export default function Account() {
        <button
         className="text-center text-xl font-['Raleway'] h-12 p-2 md:p-4 md:h-16
         font-bold capitalize text-black rounded-3xl
-                     w-42 bg-red-400 hover:text-white
+                     w-42 bg-red-400 hover:text-[#6000fc]
                      transform hover:scale-110 border hover:border-[#6000fc] transition duration-500"
                      onClick={() => {
          

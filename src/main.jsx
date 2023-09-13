@@ -9,6 +9,7 @@ import LoginSignup from './component/loginSignup';
 import Profile from './component/profile';
 import Account from './component/account';
 import LandingPage from './component/landingPage';
+import Recipes from './component/recipes';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import {
   
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/recipes" element={<Recipes />} />
       </Routes>
     </Router>
     

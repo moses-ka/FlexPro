@@ -194,7 +194,7 @@ export default function ProtienCalories() {
       <div className="flex flex-col justify-center items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl">
       {isLoading && (<Loading />) }
           {!isLoading && (<>
-        <h2>Protein and Calories</h2>
+        <h2 className="text-xl font-bold text-center">Protein and Calories</h2>
 
         <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
           {/* <label className="text-black w-16" htmlFor="meal">

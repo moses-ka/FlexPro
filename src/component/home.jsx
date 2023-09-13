@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect,useState } from "react";
 import { useNavigate } from "react-router";
 import Cookies from "js-cookie";
+import {Link} from "react-router-dom";
 export default function Home() {
   const [user, setUser] = useState(null);
   const Navigate = useNavigate();
@@ -36,7 +37,12 @@ export default function Home() {
                           font-serif  font-extrabold inline lg:hidden  group-hover:inline hover:delay-150 blur-none 
                            text-4xl"
             >
+              <Link to="/fitness" className="text-black">
               Workout
+              </Link>
+              
+       
+              
             </span>
           </div>
 
@@ -52,7 +58,9 @@ export default function Home() {
                           font-serif font-extrabold   inline lg:hidden  group-hover:inline hover:delay-150 blur-none 
                            text-4xl"
             >
+                 <Link to="/nutrition" className="text-black">
               nutrition
+              </Link>
             </span>
           </div>
 
@@ -65,7 +73,9 @@ export default function Home() {
           >
                <span  className=" text-center font-extrabold text-black font-serif    inline lg:hidden group-hover:inline hover:delay-150 blur-none  text-4xl" 
             >
+              <Link to="/recipes" className="text-black">
               Recipes
+              </Link>
             </span>
           </div>
      
