@@ -57,8 +57,8 @@ export default function Account() {
     }
   return (<>
     <Navbar />
-    <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen'>
-        <div className='flex flex-col justify-center items-center gap-2 bg-gray-600 rounded-[50px] p-4 w-full h-full md:w-3/5 mt-2 drop-shadow-xl '>
+    <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12 h-screen'>
+        <div className='flex flex-col justify-center items-center gap-4 bg-gray-600 rounded-[50px] p-4 w-full lg:w-5/6 drop-shadow-xl '>
      
         <img className='rounded-full' src={user?.picture} alt="" />
         <span className='text-2xl font-bold'>{user?.name}</span>
