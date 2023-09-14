@@ -46,8 +46,8 @@ const [superFlex,setSuperflex] = useState()
       // console.log(superFlex, "supertFlex")
       // console.log(workOutPlan, "workoutplan")
   return (
-    <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12 w-full '>
-      <div className='flex flex-col justify-center items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl '>
+    <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
+      <div className='flex flex-col  items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>
       {isLoading && <Loading />}
       {!isLoading && (<>
       
@@ -221,7 +221,7 @@ const [superFlex,setSuperflex] = useState()
             </div>
           </div>
           <h2 className='text-2xl lg:text-4xl font-bold text-center text-black '>{superFlex?.name}</h2>
-            <span className='text-center self-center text-sm w-6/6'>{superFlex?.description}</span>
+            <span className='text-center self-center text-sm w-full lg:w-96 '>{superFlex?.description}</span>
             <div
             id="accordion-collapse"
             data-accordion="collapse"
@@ -272,7 +272,7 @@ const [superFlex,setSuperflex] = useState()
              p-4 font-medium   text-center text-slate-800 m-2 
              rounded-3xl bg-gray-400 
               '>
-               <span className='text-center '>{el.name} superSet {el.superset} {el.sets} x {el.repetitions} </span>
+               <span className='text-center w-full lg:w-auto '>{el.name} superSet {el.superset} {el.sets} x {el.repetitions} </span>
              </div>
               )}
             </div>
@@ -295,7 +295,7 @@ const [superFlex,setSuperflex] = useState()
                 Accordion(1);
               }}
             >
-              <span className=" w-full lg:w-80 ">{superFlex && superFlex?.days[1].name} </span>{" "}
+              <span className=" w-full lg:w-80  ">{superFlex && superFlex?.days[1].name} </span>{" "}
               {/*the title for the accordion*/}
               <svg
                 data-accordion-icon
