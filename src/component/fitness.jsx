@@ -44,19 +44,19 @@ const Fitness = () => {
         id="accordion"
         className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12"
       >
-        <div className="flex flex-col justify-center items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl ">
-          <h2 className="text-2xl font-bold text-center">Make plan</h2>{" "}
+        <div className="flex flex-col justify-center items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl ">
+          <h2 className="text-2xl text-white font-bold text-center">Make plan</h2>{" "}
           {/*the title*/}
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -98,13 +98,13 @@ const Fitness = () => {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center bg-gray-300  gap-4 lg:gap-10 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center bg-[#22223B]  gap-4 lg:gap-10 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -146,13 +146,13 @@ const Fitness = () => {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-left text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -194,13 +194,13 @@ const Fitness = () => {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10  bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10  bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-left text-slate-800 m-2 
-                 rounded-3xl bg-gray-400
+                 rounded-3xl bg-[#B9B4C7]
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"

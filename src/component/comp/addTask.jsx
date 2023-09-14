@@ -47,7 +47,7 @@ const AddTask = ({day}) => {
   const post = () => {
     // function for rendering task list
     return savedTasks.map((task, index) => (
-      <div className="w-full flex flex-col gap-4  justify-center items-center" key={index}>
+      <div  className="w-full flex flex-col gap-4   justify-center items-center" key={index}>
         <Tasks
           key={index}
           text={task}
@@ -73,7 +73,7 @@ const AddTask = ({day}) => {
              
             <input
               placeholder="Add exercise"
-              className=" w-full rounded-2xl  bg-gray-400 p-2   placeholder-slate-600"
+              className=" w-full rounded-2xl  bg-[#B9B4C7] p-2   placeholder-slate-600"
               type="text"
               value={task}
               onChange={(event) => setTask(event.target.value)}
@@ -81,7 +81,7 @@ const AddTask = ({day}) => {
              </form>
             </div>
            
-            <div className="flex flex-col justify-center items-center gap-2 bg-gray-400 rounded-[50px] p-4 h-f w-full lg:w-auto drop-shadow-xl">
+            <div className="flex flex-col justify-center items-center gap-2 bg-[#B9B4C7] rounded-[50px] p-4 h-f w-full lg:w-auto drop-shadow-xl">
             {post()}
             </div>
          

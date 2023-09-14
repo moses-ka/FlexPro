@@ -28,10 +28,10 @@ const Tasks = (props) => {
 
   return (
     <>
-      <div className="flex justify-center items-center gap-2 bg-gray-400 p-2 rounded-2xl ">
+      <div className="flex justify-center items-center gap-2 bg-[#B9B4C7]  p-2 rounded-2xl ">
         {isEditable ? (
           <input
-            className="rounded-2xl  bg-gray-400  p-1  placeholder-slate-600 w-full"
+            className="rounded-2xl  bg-[#B9B4C7]   p-1  placeholder-slate-600 w-full"
             type="text"
             value={text}
             onChange={handleInputChange}

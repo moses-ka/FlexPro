@@ -41,8 +41,8 @@ export default function Exercises() {
   // console.log(exercises , 'exercises');
   return (
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
-      <div className='flex flex-col  items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>
-      <h2 className="text-2xl font-bold text-center">Exercises</h2>
+      <div className='flex flex-col  items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>
+      <h2 className="text-2xl font-bold text-center text-white">Exercises</h2>
       {isLoading && <Loading/>}
       {!isLoading &&(<>
     
@@ -51,13 +51,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl  bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -96,7 +96,7 @@ export default function Exercises() {
              {exercises && exercises[0].chest?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl  bg-[#B9B4C7] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -107,13 +107,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl  bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -152,7 +152,7 @@ export default function Exercises() {
              {exercises && exercises[1].Legs?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl  bg-[#B9B4C7] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -163,13 +163,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl  bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -208,7 +208,7 @@ export default function Exercises() {
              {exercises && exercises[2].Back?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl  bg-[#B9B4C7] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -219,13 +219,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl  bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -264,7 +264,7 @@ export default function Exercises() {
              {exercises && exercises[3].Shoulders?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl  bg-[#B9B4C7] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -275,13 +275,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl  bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -320,7 +320,7 @@ export default function Exercises() {
              {exercises && exercises[4].Biceps?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl  bg-[#B9B4C7] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -331,13 +331,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl  bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -376,7 +376,7 @@ export default function Exercises() {
              {exercises && exercises[5].Triceps?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl  bg-[#B9B4C7] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>

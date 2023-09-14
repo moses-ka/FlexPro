@@ -58,30 +58,30 @@ export default function Account() {
   return (<>
     <Navbar />
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12 h-screen'>
-        <div className='flex flex-col justify-center items-center gap-4 bg-gray-600 rounded-[50px] p-4 w-full lg:w-5/6 drop-shadow-xl '>
+        <div className='flex flex-col justify-center items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-5/6 drop-shadow-xl '>
      
-        <img className='rounded-full' src={user?.picture} alt="" />
+        <img className='rounded-full' src={user?.picture} alt="Profile Irmg" />
         <span className='text-2xl font-bold'>{user?.name}</span>
         {isLoading && (
          <Loading />  
         )}
        {updatAcount !== true && userData && isLoading == false && (
          <div className='flex flex-col justify-center items-center gap-2 w-full'>
-        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-5/6 h-10  drop-shadow-xl'>
+        <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full p-4 w-full lg:w-5/6 h-10  drop-shadow-xl'>
         {user?.email}
         </div>
       
-        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
         Age {userData?.age}
         </div>
-        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
         Weight {userData?.weight}
         </div>
      
-        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
         Height {userData?.height}
         </div>
-        <div className='flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
+        <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
         Gender {userData?.gender}
         </div>
         </div>
@@ -89,7 +89,7 @@ export default function Account() {
        {updatAcount == true && (
        <div className='w-full'>
        <form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
-      <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
         <label className="text-black w-16 text-sm " htmlFor="age">
           Age
         </label>
@@ -108,7 +108,7 @@ export default function Account() {
           }}
         />
       </div>
-      <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
         <label className="text-black w-16 text-sm" htmlFor="yourWeight">
           Weight
         </label>
@@ -126,7 +126,7 @@ export default function Account() {
           }}
         />
       </div>
-      <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
         <label className="text-black w-16 text-sm" htmlFor="yourHeight">
           Height
         </label>
@@ -144,7 +144,7 @@ export default function Account() {
           }}
         />
       </div>
-      <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
         <label className="text-black w-16 text-sm" htmlFor="gender">
           Gender
         </label>
@@ -169,7 +169,7 @@ export default function Account() {
         type="submit"
         className="text-center text-2xl font-['Raleway']
         font-bold capitalize text-black rounded-3xl
-         w-3/6 bg-white hover:text-[#6000fc]
+         w-3/6  bg-[#B9B4C7] hover:text-[#6000fc]
          transform hover:scale-110 transition border hover:border-[#6000fc] duration-500"
       >
         submit
@@ -185,7 +185,7 @@ export default function Account() {
        
        )} 
        <button 
-        className="flex justify-center items-center gap-2 lg:gap-10 bg-green-200 rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl hover:text-[#6000fc]  
+        className="flex justify-center items-center gap-2 lg:gap-10  bg-[#9888c2] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl hover:text-[#6000fc]  
                       transform hover:scale-110 transition duration-500 border hover:border-[#6000fc]"
                       onClick={() => {
                         setUpdatAcount(!updatAcount);

@@ -3,8 +3,9 @@
 import { FaNutritionix } from "react-icons/fa";
 import { BsFillPersonFill } from "react-icons/bs";
 import { IoIosFitness } from "react-icons/io";
-import { BiHomeHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import {HiHome} from "react-icons/hi";
+import {MdOutlineFastfood} from "react-icons/md";
 
 const  Navbar = ()=> {
   return (
@@ -17,8 +18,8 @@ const  Navbar = ()=> {
           >
             <li className=" list-none">
               <Link to="/nutrition">
-                <FaNutritionix
-                  className=" text-[#D1C8DE] hover:text-gray-50 lg:h-20"
+                <MdOutlineFastfood
+                  className=" text-[#D1C8DE] hover:text-[#6000fc] duration-500 lg:h-20"
                   size={30}
                 />
               </Link>
@@ -28,7 +29,7 @@ const  Navbar = ()=> {
               <Link to="/fitness">
                 {
                   <IoIosFitness
-                    className=" text-[#D1C8DE]  hover:text-gray-50 lg:h-20"
+                    className=" text-[#D1C8DE]  hover:text-[#6000fc] duration-500 lg:h-20"
                     size={32}
                   />
                 }
@@ -37,8 +38,8 @@ const  Navbar = ()=> {
             <li className="list-none">
               <Link to="/home">
                 {
-                  <BiHomeHeart
-                    className=" text-[#D1C8DE]  hover:text-gray-50 lg:h-20"
+                  <HiHome
+                    className=" text-[#D1C8DE]  hover:text-[#6000fc] duration-500 lg:h-20"
                     size={30}
                   />
                 }
@@ -49,7 +50,7 @@ const  Navbar = ()=> {
                 {" "}
                 {
                   <BsFillPersonFill
-                    className=" text-[#D1C8DE]  hover:text-gray-50 lg:h-20"
+                    className=" text-[#D1C8DE] hover:text-[#6000fc] duration-500 lg:h-20"
                     size={30}
                   />
                 }{" "}

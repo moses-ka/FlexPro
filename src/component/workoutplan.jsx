@@ -47,23 +47,23 @@ const [superFlex,setSuperflex] = useState()
       // console.log(workOutPlan, "workoutplan")
   return (
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
-      <div className='flex flex-col  items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>
+      <div className='flex flex-col  items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>
       {isLoading && <Loading />}
       {!isLoading && (<>
       
      
-            <h2 className='text-2xl lg:text-4xl font-bold text-center text-black '>{startFlex?.name}</h2>
-            <span className='text-center self-center text-sm w-6/6'>{startFlex?.description}</span>
+            <h2 className='text-2xl lg:text-4xl font-bold text-center text-white '>{startFlex?.name}</h2>
+            <span className='text-center  text-white self-center text-sm w-6/6'>{startFlex?.description}</span>
             <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl b bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -102,7 +102,7 @@ const [superFlex,setSuperflex] = useState()
              {startFlex && startFlex.days[0].exercises?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl b bg-[#B9B4C7] 
               '>
                <span className='text-center '>{el.name} {el.sets} x {el.repetitions}</span>
              </div>
@@ -112,13 +112,13 @@ const [superFlex,setSuperflex] = useState()
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl b bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -157,7 +157,7 @@ const [superFlex,setSuperflex] = useState()
              {startFlex && startFlex.days[1].exercises?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl b bg-[#B9B4C7] 
               '>
            <span className='text-center '>{el.name} {el.sets} x {el.repetitions}</span>
              </div>
@@ -167,13 +167,13 @@ const [superFlex,setSuperflex] = useState()
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl b bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -212,7 +212,7 @@ const [superFlex,setSuperflex] = useState()
              {startFlex && startFlex?.days[2].exercises?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl b bg-[#B9B4C7] 
               '>
              <span className='text-center '>{el.name} {el.sets} x {el.repetitions}</span>
             
@@ -220,18 +220,18 @@ const [superFlex,setSuperflex] = useState()
               )}
             </div>
           </div>
-          <h2 className='text-2xl lg:text-4xl font-bold text-center text-black '>{superFlex?.name}</h2>
-            <span className='text-center self-center text-sm w-full lg:w-96 '>{superFlex?.description}</span>
+          <h2 className='text-2xl lg:text-4xl font-bold text-center text-white '>{superFlex?.name}</h2>
+            <span className='text-center self-center text-sm w-full text-white lg:w-96 '>{superFlex?.description}</span>
             <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl b bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -270,7 +270,7 @@ const [superFlex,setSuperflex] = useState()
              {superFlex && superFlex?.days[0].exercises?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl b bg-[#B9B4C7] 
               '>
                <span className='text-center w-full lg:w-auto '>{el.name} superSet {el.superset} {el.sets} x {el.repetitions} </span>
              </div>
@@ -280,13 +280,13 @@ const [superFlex,setSuperflex] = useState()
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl b bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -325,7 +325,7 @@ const [superFlex,setSuperflex] = useState()
              {superFlex && superFlex?.days[1].exercises?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl b bg-[#B9B4C7] 
               '>
            <span className='text-center '>{el.name} superSet {el.superset} {el.sets} x {el.repetitions} </span>
              </div>
@@ -335,13 +335,13 @@ const [superFlex,setSuperflex] = useState()
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-gray-300  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B]  rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-gray-400 
+                 rounded-3xl b bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-2"
               aria-expanded="true"
@@ -380,7 +380,7 @@ const [superFlex,setSuperflex] = useState()
              {superFlex && superFlex.days[2].exercises?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl bg-gray-400 
+             rounded-3xl b bg-[#B9B4C7] 
               '>
              <span className='text-center '>{el.name} {el.sets} x {el.repetitions} </span>
             

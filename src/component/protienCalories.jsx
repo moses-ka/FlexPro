@@ -191,12 +191,12 @@ export default function ProtienCalories() {
       className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12"
     >
         
-      <div className="flex flex-col justify-center items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl">
+      <div className="flex flex-col justify-center items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl">
       {isLoading && (<Loading />) }
           {!isLoading && (<>
-        <h2 className="text-xl font-bold text-center">Protein and Calories</h2>
+        <h2 className="text-xl text-white font-bold text-center">Intake Calculator</h2>
 
-        <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+        <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
           {/* <label className="text-black w-16" htmlFor="meal">
             Meal
           </label> */}
@@ -205,7 +205,7 @@ export default function ProtienCalories() {
 
          
           <select
-            className="w-4/6 rounded-2xl  border border-[#6000fc] p-2 bg-gray-300"
+            className="w-4/6 rounded-2xl  border border-[#6000fc] p-2 bg-[#B9B4C7]"
             name="meal"
             id="meal"
             onChange={handSelectingFood}
@@ -220,7 +220,7 @@ export default function ProtienCalories() {
           <button
             className="text-center text-sm font-['Raleway']
                         font-bold capitalize text-black rounded-[50px]
-                         w-22 p-4 bg-white hover:text-[#6000fc]
+                         w-22 p-4 bg-[#B9B4C7] hover:text-[#6000fc]
                          transform hover:scale-110 transition duration-500 border hover:border-[#6000fc]"
             onClick={() => setShowInputs(!showInputs)}
           >
@@ -231,9 +231,9 @@ export default function ProtienCalories() {
         
         {/* Render variations of the selected food item */}
         {selectedFood && (
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
             <select
-              className="w-5/6 text-sm rounded-2xl p-2 bg-gray-300 border border-[#6000fc]"
+              className="w-5/6 text-sm rounded-2xl p-2 bg-[#B9B4C7] border border-[#6000fc]"
               name="specificMeal"
               id="specificMeal"
               onChange={handleSelectingVaration}
@@ -252,13 +252,13 @@ export default function ProtienCalories() {
               max={9}
               onChange={(e) => setMultiplier(e.target.value)}
               value={multiplier}
-              className="text-black border border-[#6000fc] w-2/6  rounded-2xl p-2  bg-gray-300  "
+              className="text-black border border-[#6000fc] w-2/6  rounded-2xl p-2  bg-[#B9B4C7]  "
             />{" "}
             <button
               onClick={AddFood}
               className="text-center text-sm font-['Raleway']
                           font-bold capitalize text-black rounded-[50px]
-                           w-28 p-4 bg-white hover:text-[#6000fc]
+                           w-28 p-4 bg-[#B9B4C7] hover:text-[#6000fc]
                            transform hover:scale-110 transition border hover:border-[#6000fc] duration-500"
             >
               Add
@@ -266,36 +266,36 @@ export default function ProtienCalories() {
           </div>
         )}
         {showInputs && (
-          <div className="flex flex-col md:flex-row justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
             <input
               type="text"
               placeholder="Enter name"
-              className="text-black  border border-[#6000fc] w-5/6 md:w-full rounded-2xl p-2 bg-gray-300 "
+              className="text-black  border border-[#6000fc] w-5/6 md:w-full rounded-2xl p-2 placeholder:text-gray-600 bg-[#B9B4C7] "
               onChange={(e) => setMeal(e.target.value)}
             />
             <input
               type="number"
               placeholder="Enter protein"
-              className="text-black  border border-[#6000fc] w-5/6 md:w-full rounded-2xl p-2 bg-gray-300"
+              className="text-black  border border-[#6000fc] w-5/6 md:w-full rounded-2xl placeholder:text-gray-600 p-2 bg-[#B9B4C7]"
               onChange={(e) => setProtein(e.target.value)}
             />
             <input
               type="number"
               placeholder="Enter kcal"
-              className="text-black w-5/6  border border-[#6000fc] md:w-full rounded-2xl p-2 bg-gray-300"
+              className="text-black w-5/6  border border-[#6000fc] md:w-full rounded-2xl placeholder:text-gray-600 p-2 bg-[#B9B4C7]"
               onChange={(e) => setKcal(e.target.value)}
             />
             <input
               type="number"
               placeholder="Enter carbs"
-              className="text-black w-5/6 md:w-full  border border-[#6000fc] rounded-2xl p-2 bg-gray-300"
+              className="text-black w-5/6 md:w-full  border border-[#6000fc] rounded-2xl p-2 placeholder:text-gray-600 bg-[#B9B4C7]"
               onChange={(e) => setCarbs(e.target.value.toString())}
             />
             <button
               onClick={handleCustomEntry}
               className="text-center text-sm font-['Raleway']
                         font-bold capitalize text-black rounded-[50px]
-                         w-28 p-4 bg-white hover:text-[#6000fc]
+                         w-28 p-4 bg-[#B9B4C7]  hover:text-[#6000fc]
                          transform hover:scale-110 transition  border hover:border-[#6000fc] duration-500"
             >
               Add
@@ -304,9 +304,9 @@ export default function ProtienCalories() {
         )}
 
         {foodPerDay.length !== 0 && (
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <div className="text-black w-fit text-sm flex flex-col">
-              <h2 className="text-black text-center text-lg">Protein</h2>
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <div className="text-white w-fit text-sm flex flex-col">
+              <h2 className="text-white text-center text-lg">Protein</h2>
               {foodPerDay.map((item, index) => (
                 <div className="flex justify-center items-center" key={index}>
                  <div className="flex justify-center items-center gap-2 w-full">
@@ -320,7 +320,7 @@ export default function ProtienCalories() {
              
                   <button
                     onClick={() => deleteFoodItem(index)}
-                    className="text-black hover:text-[#6000fc] text-center"
+                    className="text-white hover:text-[#6000fc] text-center"
                   >
                     <MdDelete size={20} />
                   </button>
@@ -328,7 +328,7 @@ export default function ProtienCalories() {
                   
                 </div>
               ))}
-              <span className="text-black text-center self-center">
+              <span className="text-white text-center self-center">
               Total of {totalIntake.protein} grams
                 </span>
             </div>
@@ -336,9 +336,9 @@ export default function ProtienCalories() {
         )}
 
         {foodPerDay.length !== 0 && selectedVariation && (
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <div className="text-black w-fit text-sm flex flex-col">
-              <h2 className="text-black text-center text-lg">Kcal</h2>
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <div className="text-white w-fit text-sm flex flex-col">
+              <h2 className="text-white text-center text-lg">Kcal</h2>
               {foodPerDay.map((item, index) => (
                 <div className="flex justify-center items-center gap-2" key={index}>
                   {item.name}{" "}
@@ -347,16 +347,16 @@ export default function ProtienCalories() {
                   {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
                 </div>
               ))}
-                 <span className="text-black text-center self-center">
+                 <span className="text-white text-center self-center">
                 Total of  {totalIntake.calories} grams
                 </span>
             </div>
           </div>
         )}
     {foodPerDay.length !== 0 && (
-      <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
-        <div className="text-black w-fit text-sm flex flex-col">
-          <h2 className="text-black text-center text-lg">carbs</h2>
+      <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl">
+        <div className="text-white w-fit text-sm flex flex-col">
+          <h2 className="text-white text-center text-lg">carbs</h2>
           {foodPerDay.map((item, index) => (
             <div className="flex justify-center items-center gap-2" key={index}>
               {item.name}{" "}
@@ -365,7 +365,7 @@ export default function ProtienCalories() {
               {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
             </div>
           ))}
-          <span className="text-black text-center self-center">
+          <span className="text-white text-center self-center">
             Total of {totalIntake.carbs} grams
           </span>
         </div>

@@ -76,15 +76,15 @@ export default function IntakeCalculator() {
       id="nutrition"
       className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12"
     >
-      <div className="flex flex-col justify-center items-center gap-4 bg-gray-200 rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl">
-        <h1 className='text-2xl font-bold text-center'>Nutrition</h1>
+      <div className="flex flex-col justify-center items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl">
+        <h1 className='text-2xl font-bold text-center text-white'>Nutrition</h1>
         <form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm " htmlFor="age">
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <label className="text-white w-16 text-sm " htmlFor="age">
               Age
             </label>
             <input
-              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#45335f] placeholder:text-gray-600 bg-[#B9B4C7]"
               placeholder="Age"
               type="number"
               min="14"
@@ -97,12 +97,12 @@ export default function IntakeCalculator() {
               }}
             />
           </div>
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm" htmlFor="yourWeight">
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <label className="text-white w-16 text-sm" htmlFor="yourWeight">
               Weight
             </label>
             <input
-              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#45335f] placeholder:text-gray-600 bg-[#B9B4C7]"
               placeholder="Weight (kg)"
               type="number"
               min="40"
@@ -115,12 +115,12 @@ export default function IntakeCalculator() {
               }}
             />
           </div>
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm" htmlFor="yourHeight">
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <label className="text-white w-16 text-sm" htmlFor="yourHeight">
               Height
             </label>
             <input
-              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#45335f] placeholder:text-gray-600 bg-[#B9B4C7]"
               placeholder="Height (cm)"
               type="number"
               min="130"
@@ -133,12 +133,12 @@ export default function IntakeCalculator() {
               }}
             />
           </div>
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm" htmlFor="gender">
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <label className="text-white w-16 text-sm" htmlFor="gender">
               Gender
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#45335f] bg-[#B9B4C7]"
               name="gender"
               id=""
               required
@@ -150,12 +150,12 @@ export default function IntakeCalculator() {
               <option value="female">Female</option>
             </select>
           </div>
-          {/* <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm" htmlFor="bodyFat">
+          {/* <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B]rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <label className="text-white w-16 text-sm" htmlFor="bodyFat">
               Fat %
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#45335f] bg-[#B9B4C7]"
               name="bodyFat"
               id=""
               required
@@ -168,12 +168,12 @@ export default function IntakeCalculator() {
               <option value="30">Overweight</option>
             </select>
           </div> */}
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm" htmlFor="activityLevel">
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <label className="text-white w-16 text-sm" htmlFor="activityLevel">
               Activity
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#45335f] bg-[#B9B4C7]"
               name="activityLevel"
               id=""
               required
@@ -188,12 +188,12 @@ export default function IntakeCalculator() {
               <option value="1.9">Extra Active</option>
             </select>
           </div>
-          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
-            <label className="text-black w-16 text-sm" htmlFor="goal">
+          <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <label className="text-white w-16 text-sm" htmlFor="goal">
               Goal
             </label>
             <select
-              className="w-full text-sm rounded-2xl p-2 border border-[#6000fc] bg-gray-300"
+              className="w-full text-sm rounded-2xl p-2 border border-[#45335f] bg-[#B9B4C7]"
               name="goal"
               id=""
               required
@@ -210,9 +210,9 @@ export default function IntakeCalculator() {
             {/* ... Image and additional content */}
             <button
             type="submit"
-            className="text-center text-2xl font-['Raleway']
+            className=" text-center text-2xl font-['Raleway']
             font-bold capitalize text-black rounded-3xl
-             w-5/6 bg-white hover:text-[#6000fc]
+             w-5/6 bg-[#B9B4C7] hover:text-[#6000fc]
              transform hover:scale-110 transition border hover:border-[#6000fc] duration-500"
           >
             Calculate
@@ -221,11 +221,11 @@ export default function IntakeCalculator() {
        
         {dailyCalories !== undefined && dailyCalories !== 0 && dailyProtein !== undefined && dailyProtein !== 0 && (
           <>
-            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B]rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
               <span className="text-center text-sm w-5/6">Daily Calorie Intake about ({dailyCalories} kcal)</span>
             </div>
             {/* Display calculated protein intake */}
-            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-gray-400 rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+            <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B]rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
               <span className="text-center text-sm w-5/6">Daily Protein Intake about ({dailyProtein} grams)</span>
             </div>
           </>
