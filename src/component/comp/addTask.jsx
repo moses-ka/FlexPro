@@ -28,13 +28,13 @@ const AddTask = ({day}) => {
     }
   };
 
-  const handleDelete = (index) => {
-    // function for handling task deletion
-    const newTasks = [...savedTasks];
-    newTasks.splice(index,1); // remove task at specified index
-    setSavedTasks(newTasks); // update savedTasks with new array
-    localStorage.setItem("tasks", JSON.stringify(newTasks)); // update local storage with new array
-  };
+const handleDelete = (index) => {
+  // function for handling task deletion
+  const newTasks = [...savedTasks];
+  newTasks.splice(index, 1); // remove task at specified index
+  setSavedTasks(newTasks); // update savedTasks with new array
+  localStorage.setItem(`tasks${day}`, JSON.stringify(newTasks)); // update local storage with new array using the correct key
+};
 
 
   const handleEdit = (index, text) => {
@@ -52,7 +52,7 @@ const AddTask = ({day}) => {
           key={index}
           text={task}
           index={index}
-          onDelete={handleDelete}
+          onDelete={(index) => handleDelete(index)}
           onEdit={handleEdit}
           savedTasks={savedTasks}
         />
@@ -81,7 +81,7 @@ const AddTask = ({day}) => {
              </form>
             </div>
            
-            <div className="flex flex-col justify-center items-center gap-2 bg-[#B9B4C7] rounded-[50px] p-4 h-f w-full lg:w-auto drop-shadow-xl">
+            <div className="flex flex-col justify-center items-center gap-2 bg-[#B9B4C7] rounded-[50px] p-4 lg-h-auto w-full lg:w-auto drop-shadow-xl">
             {post()}
             </div>
          

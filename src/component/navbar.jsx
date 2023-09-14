@@ -11,15 +11,15 @@ const  Navbar = ()=> {
   return (
     <>
       <nav className=" w-full fixed bottom-0 left-0 right-0 z-50 ">
-        <div>
+        <div className="">
           <div
             className="className= flex  justify-evenly items-center w-full h-14 shadow-md rounded-t-full
-                   bg-[#181320] shadow-[#483468]  lg:h-20 "
+                   bg-[#4A4E69] shadow-[#483468]  lg:h-20 "
           >
             <li className=" list-none">
               <Link to="/nutrition">
                 <MdOutlineFastfood
-                  className=" text-[#D1C8DE] hover:text-[#6000fc] duration-500 lg:h-20"
+                  className=" text-[#D1C8DE] hover:text-[#6000fc] transform hover:scale-110 transition duration-500  lg:h-20"
                   size={30}
                 />
               </Link>
@@ -29,7 +29,7 @@ const  Navbar = ()=> {
               <Link to="/fitness">
                 {
                   <IoIosFitness
-                    className=" text-[#D1C8DE]  hover:text-[#6000fc] duration-500 lg:h-20"
+                    className=" text-[#D1C8DE]  hover:text-[#6000fc]  transform hover:scale-110 transition duration-500 lg:h-20"
                     size={32}
                   />
                 }
@@ -39,7 +39,7 @@ const  Navbar = ()=> {
               <Link to="/home">
                 {
                   <HiHome
-                    className=" text-[#D1C8DE]  hover:text-[#6000fc] duration-500 lg:h-20"
+                    className=" text-[#D1C8DE]  hover:text-[#6000fc] transform hover:scale-110 transition duration-500 lg:h-20"
                     size={30}
                   />
                 }
@@ -50,7 +50,7 @@ const  Navbar = ()=> {
                 {" "}
                 {
                   <BsFillPersonFill
-                    className=" text-[#D1C8DE] hover:text-[#6000fc] duration-500 lg:h-20"
+                    className=" text-[#D1C8DE] hover:text-[#6000fc] transform hover:scale-110 transition duration-500 lg:h-20"
                     size={30}
                   />
                 }{" "}

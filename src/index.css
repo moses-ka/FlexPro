@@ -4,8 +4,16 @@
 
 body{
     height: 100vh;
-    background: #22223B;  /* fallback for old browsers */
-  
+    background: #171728;  /* fallback for old browsers */
+    background: hsla(240, 35%, 25%, 1);
+
+    background: linear-gradient(171deg, hsla(240, 35%, 25%, 1) 34%, hsla(232, 17%, 35%, 1) 100%);
+    
+    background: -moz-linear-gradient(171deg, hsla(240, 35%, 25%, 1) 34%, hsla(232, 17%, 35%, 1) 100%);
+    
+    background: -webkit-linear-gradient(171deg, hsla(240, 35%, 25%, 1) 34%, hsla(232, 17%, 35%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2A2A58", endColorstr="#4A4E69", GradientType=1 );
      
     background-repeat: no-repeat;
     background-size: cover;

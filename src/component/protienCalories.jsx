@@ -216,7 +216,7 @@ export default function ProtienCalories() {
               </option>
             ))}
           </select>
-          ||
+          <span className="text-white">||</span>
           <button
             className="text-center text-sm font-['Raleway']
                         font-bold capitalize text-black rounded-[50px]
@@ -245,7 +245,7 @@ export default function ProtienCalories() {
                 </option>
               ))}
             </select>
-            ||
+           <span className="text-white"> ||</span>
             <input
               type="number"
               min={1}

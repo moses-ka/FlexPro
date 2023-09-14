@@ -72,14 +72,14 @@ export default function Account() {
         </div>
       
         <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
-        Age {userData?.age}
+        Age {userData?.age}  Years
         </div>
         <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
-        Weight {userData?.weight}
+        Weight {userData?.weight}  Kg
         </div>
      
         <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
-        Height {userData?.height}
+        Height {userData?.height} Cm
         </div>
         <div className='flex justify-center items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl'>
         Gender {userData?.gender}

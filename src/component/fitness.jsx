@@ -55,8 +55,8 @@ const Fitness = () => {
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
-                 p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-[#B9B4C7] 
+              p-4 font-medium   text-left text-slate-800 m-2 
+              rounded-3xl bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -103,8 +103,8 @@ const Fitness = () => {
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
-                 p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl bg-[#B9B4C7] 
+              p-4 font-medium   text-left text-slate-800 m-2 
+              rounded-3xl bg-[#B9B4C7] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
