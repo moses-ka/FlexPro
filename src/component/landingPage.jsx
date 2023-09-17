@@ -92,7 +92,7 @@ export default function LandingPage() {
             />
           </div>
         </div>
-        <hr className="bg-[#d9d9d9] mb-20 w-1/2 h-px shrink-0" />
+        <hr className="bg-[#d9d9d9] mb-20 w-4/6 h-px " />
         <div
           id="weOffer"
           className="flex flex-col w-screen justify-center items-center gap-6 "
@@ -150,7 +150,7 @@ export default function LandingPage() {
         items-center bg-none  md:bg-[url('https://file.rendit.io/n/x71t4g9TJWktoYkEISBD.png')]  bg-no-repeat 
         bg-auto gap-6"
         >
-          <hr className="bg-[#d9d9d9] mb-20 w-5/12 h-px shrink-0 mt-12  " />
+          <hr className="bg-[#d9d9d9] mb-20 w-3/6 h-px shrink-0 mt-12  " />
           {/* <img
             src="https://file.rendit.io/n/qI8CXxvyaNbWuTiJ9QaQ.png"
             className="w-96 h-full self-start ml-6 inline "
@@ -177,7 +177,7 @@ export default function LandingPage() {
           </span>
         </div>
 
-        <hr className="bg-[#d9d9d9] mb-20 w-64 h-px shrink-0" />
+        <hr className="bg-[#d9d9d9] mb-20 w-1/6 h-px" />
         <div className="flex flex-col justify-center items-center gap-6 w-screen mb-4">
           <h2 className="text-center text-2xl md:text-4xl font-['Lato'] capitalize text-white ">
             Contact Us
