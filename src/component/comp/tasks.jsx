@@ -28,10 +28,10 @@ const Tasks = (props) => {
 
   return (
     <>
-      <div className="flex justify-center items-center gap-2 bg-[#B9B4C7]  p-2 rounded-2xl ">
+      <div className="flex justify-center items-center gap-2 bg-[#f2f2f2]  p-2 rounded-2xl ">
         {isEditable ? (
           <input
-            className="rounded-2xl  bg-[#B9B4C7]   p-1  placeholder-slate-600 w-full"
+            className="rounded-2xl  bg-[#f2f2f2]   p-1  placeholder-slate-600 w-full"
             type="text"
             value={text}
             onChange={handleInputChange}
@@ -49,7 +49,7 @@ const Tasks = (props) => {
         )}
 
         <MdDeleteSweep
-          className=" hover:text-purple-800 w-6 h-6"
+          className=" hover:text-[#3c42de] w-8 h-8"
           onClick={handleDeleteClick}
         />
       </div>

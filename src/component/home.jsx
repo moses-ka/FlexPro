@@ -12,7 +12,7 @@ export default function Home() {
       setUser(cookie);
      
     } else {
-      navigate("/login");
+      Navigate("/login");
     }
   },[]);
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         className="flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen"
       >
         <div
-          className="flex flex-col justify-evenly items-center gap-6 bg-[#4A4E69] rounded-[50px] p-4 w-full md:w-5/6 h-5/6 mt-2  drop-shadow-xl   "
+          className="flex flex-col justify-evenly items-center gap-6 bg-[#34344d] rounded-[50px] p-4 w-full md:w-full h-5/6 mt-2  drop-shadow-xl   "
         >
           <div
             className="h-2/6 

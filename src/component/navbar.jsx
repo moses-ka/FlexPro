@@ -13,23 +13,24 @@ const  Navbar = ()=> {
       <nav className=" w-full fixed bottom-0 left-0 right-0 z-50 ">
         <div className="">
           <div
-            className="className= flex  justify-evenly items-center w-full h-14 shadow-md rounded-t-full
-                   bg-[#4A4E69] shadow-[#483468]  lg:h-20 "
+            className="className= flex   justify-evenly items-center w-full h-14 shadow-md rounded-t-full
+                   bg-[#34344d] shadow-[#483468]  lg:h-20 "
           >
-            <li className=" list-none">
-              <Link to="/nutrition">
+            {/* <div className="bg-[#171728] group rounded-full h-14 w-14 flex flex-col justify-center items-center"> */}
+            <li className=" list-none ">
+              <Link to="/nutrition" className="">
                 <MdOutlineFastfood
-                  className=" text-[#D1C8DE] hover:text-[#6000fc] transform hover:scale-110 transition duration-500  lg:h-20"
+                  className=" text-[#f2f2f2] hover:text-[#3c42de] transform hover:scale-110 transition duration-500  lg:h-20"
                   size={30}
                 />
               </Link>
             </li>
-
+            {/* </div> */}
             <li className="list-none">
               <Link to="/fitness">
                 {
                   <IoIosFitness
-                    className=" text-[#D1C8DE]  hover:text-[#6000fc]  transform hover:scale-110 transition duration-500 lg:h-20"
+                    className=" text-[#f2f2f2]  hover:text-[#3c42de]  transform hover:scale-110 transition duration-500 lg:h-20"
                     size={32}
                   />
                 }
@@ -39,7 +40,7 @@ const  Navbar = ()=> {
               <Link to="/home">
                 {
                   <HiHome
-                    className=" text-[#D1C8DE]  hover:text-[#6000fc] transform hover:scale-110 transition duration-500 lg:h-20"
+                    className=" text-[#f2f2f2]  hover:text-[#3c42de] transform hover:scale-110 transition duration-500 lg:h-20"
                     size={30}
                   />
                 }
@@ -50,7 +51,7 @@ const  Navbar = ()=> {
                 {" "}
                 {
                   <BsFillPersonFill
-                    className=" text-[#D1C8DE] hover:text-[#6000fc] transform hover:scale-110 transition duration-500 lg:h-20"
+                    className=" text-[#f2f2f2] hover:text-[#3c42de] transform hover:scale-110 transition duration-500 lg:h-20"
                     size={30}
                   />
                 }{" "}

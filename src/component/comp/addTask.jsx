@@ -73,7 +73,7 @@ const handleDelete = (index) => {
              
             <input
               placeholder="Add exercise"
-              className=" w-full rounded-2xl  bg-[#B9B4C7] p-2   placeholder-slate-600"
+              className=" w-full rounded-2xl  bg-[#f2f2f2] p-2   placeholder-slate-600"
               type="text"
               value={task}
               onChange={(event) => setTask(event.target.value)}
@@ -81,7 +81,7 @@ const handleDelete = (index) => {
              </form>
             </div>
            
-            <div className="flex flex-col justify-center items-center gap-2 bg-[#B9B4C7] rounded-[50px] p-4 lg-h-auto w-full lg:w-auto drop-shadow-xl">
+            <div className="flex flex-col justify-center items-center gap-2 bg-[#f2f2f2] rounded-[50px] p-4 lg-h-auto w-full lg:w-full drop-shadow-xl">
             {post()}
             </div>
          

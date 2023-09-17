@@ -18,7 +18,7 @@ useEffect(() => {
   if (cookie !== undefined && cookie !== null) {
     setUser(cookie);
   } else {
-    navigate("/login");
+    Navigate("/login");
   }
 }, []);
  

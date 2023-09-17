@@ -10,7 +10,7 @@ export default function Exercises() {
     false,
     false,
   ]);
-  const {
+  const { 
     data: exercises, isLoading,
   } = useQuery(
     ["exercises"], // Specify a unique query key
@@ -34,14 +34,14 @@ export default function Exercises() {
         }
         return item;
       });
-      console.log(newArray);
+      // console.log(newArray);
       return newArray;
     });
   };
   // console.log(exercises , 'exercises');
   return (
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
-      <div className='flex flex-col  items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-auto  drop-shadow-xl'>
+      <div className='flex flex-col  items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-full  drop-shadow-xl'>
       <h2 className="text-2xl font-bold text-center text-white">Exercises</h2>
       {isLoading && <Loading/>}
       {!isLoading &&(<>
@@ -51,13 +51,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl  bg-[#B9B4C7] 
+                 rounded-3xl  bg-[#f2f2f2] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -96,7 +96,7 @@ export default function Exercises() {
              {exercises && exercises[0].chest?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl  bg-[#B9B4C7] 
+             rounded-3xl  bg-[#f2f2f2] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -107,13 +107,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl  bg-[#B9B4C7] 
+                 rounded-3xl  bg-[#f2f2f2] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -122,7 +122,7 @@ export default function Exercises() {
                 Accordion(1);
               }}
             >
-              <span className=" w-32 lg:w-80 ">Legs </span>{" "}
+              <span className=" w-32 lg:w-80 ">Back </span>{" "}
               {/*the title for the accordion*/}
               <svg
                 data-accordion-icon
@@ -149,10 +149,10 @@ export default function Exercises() {
               } w-full  flex flex-col justify-center items-center gap-2 `}
               aria-labelledby="accordion-collapse-heading-1"
             >
-             {exercises && exercises[1].Legs?.map((el ,index) =>
+             {exercises && exercises[1].Back?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl  bg-[#B9B4C7] 
+             rounded-3xl  bg-[#f2f2f2] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -163,13 +163,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl  bg-[#B9B4C7] 
+                 rounded-3xl  bg-[#f2f2f2] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -178,7 +178,7 @@ export default function Exercises() {
                 Accordion(2);
               }}
             >
-              <span className=" w-32 lg:w-80 ">Back </span>{" "}
+              <span className=" w-32 lg:w-80 ">Shoulders </span>{" "}
               {/*the title for the accordion*/}
               <svg
                 data-accordion-icon
@@ -205,10 +205,10 @@ export default function Exercises() {
               } w-full  flex flex-col justify-center items-center gap-2 `}
               aria-labelledby="accordion-collapse-heading-1"
             >
-             {exercises && exercises[2].Back?.map((el ,index) =>
+             {exercises && exercises[2].Shoulders?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl  bg-[#B9B4C7] 
+             rounded-3xl  bg-[#f2f2f2] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -219,13 +219,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl  bg-[#B9B4C7] 
+                 rounded-3xl  bg-[#f2f2f2] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -234,7 +234,7 @@ export default function Exercises() {
                 Accordion(3);
               }}
             >
-              <span className=" w-32 lg:w-80 ">Shoulders </span>{" "}
+              <span className=" w-32 lg:w-80 ">Biceps </span>{" "}
               {/*the title for the accordion*/}
               <svg
                 data-accordion-icon
@@ -261,10 +261,10 @@ export default function Exercises() {
               } w-full  flex flex-col justify-center items-center gap-2 `}
               aria-labelledby="accordion-collapse-heading-1"
             >
-             {exercises && exercises[3].Shoulders?.map((el ,index) =>
+             {exercises && exercises[3].Biceps?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl  bg-[#B9B4C7] 
+             rounded-3xl  bg-[#f2f2f2] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -275,13 +275,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl  bg-[#B9B4C7] 
+                 rounded-3xl  bg-[#f2f2f2] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -290,7 +290,7 @@ export default function Exercises() {
                 Accordion(4);
               }}
             >
-              <span className=" w-32 lg:w-80 ">Biceps </span>{" "}
+              <span className=" w-32 lg:w-80 ">Legs </span>{" "}
               {/*the title for the accordion*/}
               <svg
                 data-accordion-icon
@@ -317,10 +317,10 @@ export default function Exercises() {
               } w-full  flex flex-col justify-center items-center gap-2 `}
               aria-labelledby="accordion-collapse-heading-1"
             >
-             {exercises && exercises[4].Biceps?.map((el ,index) =>
+             {exercises && exercises[4].Legs?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl  bg-[#B9B4C7] 
+             rounded-3xl  bg-[#f2f2f2] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>
@@ -331,13 +331,13 @@ export default function Exercises() {
           <div
             id="accordion-collapse"
             data-accordion="collapse"
-            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl  "
+            className="flex flex-col justify-center items-center gap-4 lg:gap-10 bg-[#22223B] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl  "
           >
             <button
               type="button"
               className=" drop-shadow-xl w-full flex items-center justify-between
                  p-4 font-medium   text-center text-slate-800 m-2 
-                 rounded-3xl  bg-[#B9B4C7] 
+                 rounded-3xl  bg-[#f2f2f2] 
                   "
               data-accordion-target="#accordion-collapse-body-1"
               aria-expanded="true"
@@ -376,7 +376,7 @@ export default function Exercises() {
              {exercises && exercises[5].Triceps?.map((el ,index) =>
              <div key={index} className='flex flex-col justify-center items-center gap-2 drop-shadow-xl w-full 
              p-4 font-medium   text-center text-slate-800 m-2 
-             rounded-3xl  bg-[#B9B4C7] 
+             rounded-3xl  bg-[#f2f2f2] 
               '>
              <li className='text-center list-none'>{el.name}</li>
              <span className='text-sm'>{el.description}</span>

@@ -33,12 +33,12 @@ export default function LandingPage() {
           </div>
           <div id="links" className="flex justify-center items-center gap-6 ">
             <a  href="/#weOffer">
-              <span className="text-white text-center text-xl font-['Raleway'] hover:text-[#6000fc] transform hover:scale-110 transition duration-500">
+              <span className="text-white text-center text-xl font-['Raleway'] hover:text-[#3c42de] transform hover:scale-110 transition duration-500">
                 Nutrition
               </span>
             </a>
             <a  href="/#Image2">
-              <span className="text-white text-center text-xl font-['Raleway'] transform  transition duration-500  hover:text-[#6000fc]">
+              <span className="text-white text-center text-xl font-['Raleway'] transform  transition duration-500  hover:text-[#3c42de]">
                 Fitness
               </span>
             </a>
@@ -47,8 +47,8 @@ export default function LandingPage() {
               to="/login"
               className="text-center text-2xl font-['Raleway']
                         font-bold capitalize text-black rounded-3xl
-                         w-24 bg-white hover:text-[#6000fc]
-                         transform hover:scale-110 transition duration-500 border hover:border-[#6000fc]"
+                         w-24 bg-white hover:text-[#3c42de]
+                         transform hover:scale-110 transition duration-500 border hover:border-[#3c42de]"
             >
               Login
             </Link>
@@ -77,8 +77,8 @@ export default function LandingPage() {
               to="/login"
               className="text-center text-2xl font-['Raleway']
                         font-bold capitalize text-black rounded-3xl
-                         w-28 bg-white hover:text-[#6000fc]
-                         transform hover:scale-110 transition border hover:border-[#6000fc] duration-500"
+                         w-28 bg-white hover:text-[#3c42de]
+                         transform hover:scale-110 transition border hover:border-[#3c42de] duration-500"
             >
               start
             </Link>
@@ -207,7 +207,7 @@ export default function LandingPage() {
             onClick={submitMessage}
               className="text-center text-xl font-['Raleway'] font-bold 
             capitalize bg-white rounded-3xl w-32 text-black p-2
-            transform hover:scale-110 transition duration-500 border hover:border-[#6000fc] hover:text-[#6000fc] "
+            transform hover:scale-110 transition duration-500 border hover:border-[#3c42de] hover:text-[#3c42de] "
             >
               Submit
             </button>
@@ -216,7 +216,7 @@ export default function LandingPage() {
             size={50}
             className="text-white  relative left-28 md:top-0  
            md:left-80
-           animate-bounce hover:text-[#6000fc]"
+           animate-bounce hover:text-[#3c42de]"
             onClick={() => {
               window.scrollTo(0, 0);
             }}

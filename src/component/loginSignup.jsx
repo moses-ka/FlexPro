@@ -57,19 +57,19 @@ export default function LoginSignup() {
     return (<>
     <Navbar />
       <section id="login-signup" className='flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen'>
-        <div className='flex flex-col justify-center items-center gap-4 bg-gray-600 rounded-[50px] p-6 w-full h-5/6 mt-2 lg:w-auto drop-shadow-xl  '>
+        <div className='flex flex-col justify-center items-center gap-4 bg-[#34344d] rounded-[50px] p-6 w-full h-5/6 mt-2 lg:w-full drop-shadow-xl  '>
              
-                    <h1 className='text-4xl font-serif text-center'>Welcome to  Flex Pro</h1>
-                    <span className='text-xl font-serif text-center'> Are you ready to embark on a journey towards a healthier, fitter
+                    <h1 className='text-4xl font-serif text-white text-center'>Welcome to  Flex Pro</h1>
+                    <span className='text-xl font-serif text-white text-center'> Are you ready to embark on a journey towards a healthier, fitter
               you?</span>
-                    <BiSolidUserCircle size={100} className=' drop-shadow-xl hover:text-[#6000fc]' />
-                    <h2 className='text-2xl text-center'> Log in</h2>
+                    <BiSolidUserCircle size={100} className=' drop-shadow-xl text-white hover:text-[#3c42de]' />
+                    <h2 className='text-2xl text-center text-white'> Log in</h2>
        
                 <div id='signInDiv' className=' drop-shadow-xl'>
             {/* {googleLogin} */}
                 </div>
                     <FiArrowLeft size={50} onClick={()=>{ Navigate("/")}}
-                     className='mt-20 text-lg animate-bounce hover:text-[#6000fc]'/>
+                     className='mt-20 text-lg animate-bounce text-white hover:text-[#3c42de]'/>
         </div>
     </section>
     </>)

@@ -5,11 +5,11 @@ export default function Recipes() {
   return (
     <>
       <section className="flex flex-col justify-center items-center p-6 gap-6 drop-shadow-xl mb-12 w-full  font-serif">
-        <div className="flex flex-col justify-center items-center gap-6 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-auto drop-shadow-xl ">
+        <div className="flex flex-col justify-center items-center gap-6 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl ">
           <hi className=" text-2xl text-white font-bold text-center">Recipes</hi>
           <div
-            className="flex flex-col justify-center items-center gap-2 lg:gap-10  bg-[#22223B]
-          rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl
+            className="flex flex-col justify-center items-center gap-2 lg:gap-10  bg-[#29293f]
+          rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl
           text-center  list-none   "
           >
             <h2 className="w-5/6 text-white text-2xl">
@@ -18,7 +18,7 @@ export default function Recipes() {
             <img
               src="https://p0.pxfuel.com/preview/986/514/492/food-salmon-asparagus-foodie.jpg"
               alt=" Grilled Salmon with Brown Rice and Asparagus img"
-              className=" h-72 md:h-96 rounded-lg"
+              className=" h-72 md:h-[500px] rounded-lg"
             />
             <span className="text-xl text-white"> Ingredients</span>
             <li className="w-5/6 text-white">4 salmon fillets</li>
@@ -54,8 +54,8 @@ export default function Recipes() {
             </div>
           </div>
           <div
-            className="flex flex-col justify-center items-center gap-2 lg:gap-10  bg-[#22223B]
-          rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl
+            className="flex flex-col justify-center items-center gap-2 lg:gap-10  bg-[#29293f]
+          rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl
           text-center  list-none   "
           >
             <h2 className="w-5/6 text-2xl text-white">
@@ -65,7 +65,7 @@ export default function Recipes() {
             <img
               src="https://img.freepik.com/free-photo/stir-frying-beef-with-sweet-peppers-green-beans_2829-20101.jpg?w=1060&t=st=1694632172~exp=1694632772~hmac=671ffc424c9fdac3bca35c98ffdbfd1523f0c4915b7fd52933bbfb5ce15f8937"
               alt="Lean Beef Stir-Fry with Mixed Vegetables img"
-              className=" h-72 md:h-96 rounded-lg"
+              className=" h-72 md:h-[500px] rounded-lg"
             />
             <span className="text-xl text-white"> Ingredients</span>
             <li className="w-5/6 text-white">1 lb lean beef strips</li>
@@ -103,8 +103,8 @@ export default function Recipes() {
             </div>
           </div>
           <div
-            className="flex flex-col justify-center items-center gap-2 lg:gap-10  bg-[#22223B]
-          rounded-[50px] p-4 w-full lg:w-[800px] drop-shadow-xl text-white
+            className="flex flex-col justify-center items-center gap-2 lg:gap-10  bg-[#29293f]
+          rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl text-white
           text-center  list-none   "
           >
             <h2 className="w-5/6 text-2xl">
@@ -113,7 +113,7 @@ export default function Recipes() {
             <img
               src="https://img.freepik.com/free-photo/grilled-chicken-breast-with-broccoli_144627-37477.jpg?w=900&t=st=1694632267~exp=1694632867~hmac=de5f7979de0589812cf887102fd57b7303b6da61a6a7aef0bbad30a1ac3d4b7b"
               alt="Baked Chicken Breast with Sweet Potato and Broccoli img"
-              className=" h-72  md:h-96 rounded-lg"
+              className=" h-72  md:h-[500px] rounded-lg"
             />
             <span className="text-xl"> Ingredients</span>
             <li className="w-5/6">4 boneless, skinless chicken breasts</li>

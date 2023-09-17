@@ -17,7 +17,7 @@ export default function Profile() {
       const parsedCookie = JSON.parse(cookie);
       setUserObj(parsedCookie);
     } else {
-      navigate("/login");
+      Navigate("/login");
     }
   },[]);
   // console.log(user , 'user ');
@@ -28,14 +28,14 @@ export default function Profile() {
         id="profile"
         className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12 h-screen"
       >
-        <div className="flex flex-col justify-center items-center gap-4 bg-[#4A4E69] rounded-[50px] p-4 w-full lg:w-5/6 h-5/6 drop-shadow-xl ">
-          <div className="flex flex-col justify-center items-center gap-4   bg-[#B9B4C7] rounded-[50px] h-52 p-4 w-5/6  drop-shadow-xl ">
+        <div className="flex flex-col justify-center items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-5/6 h-5/6 drop-shadow-xl ">
+          <div className="flex flex-col justify-center items-center gap-4   bg-[#f2f2f2] rounded-[50px] h-52 p-4 w-5/6  drop-shadow-xl ">
             <BiSolidUserCircle
               size={80}
-              className="hover:text-[#6000fc]
+              className="hover:text-[#3c42de]
                          transform hover:scale-110 transition duration-500"
             />
-            <span className="text-xl font-bold"> {userObj?.name}</span>
+            <span className="text-xl font-bold "> {userObj?.name}</span>
             {/* <span className="text-xl "> // level 1</span> */}
           </div>
              {/* <Link className="w-full" to="/setting">
@@ -45,7 +45,7 @@ export default function Profile() {
           </div>
             </Link> */}
             <Link className="w-5/6" to="/account">
-          <div className="flex justify-between items-center gap-2 lg:gap-10  bg-[#B9B4C7] rounded-full p-4 w-full drop-shadow-xl    ">
+          <div className="flex justify-between items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full drop-shadow-xl    ">
               <span className=" text-left capitalize transform hover:scale-110 transition duration-500">account</span>
               <HiAdjustmentsHorizontal size={32} className="text-black transform hover:scale-110 transition duration-500" />
           </div>
@@ -53,7 +53,7 @@ export default function Profile() {
           <button
             className="text-center text-xl font-['Raleway'] p-2
                         font-bold capitalize text-black rounded-3xl
-                         w-5/6  bg-[#B9B4C7] hover:text-[#6000fc]
+                         w-5/6  bg-[#f2f2f2] hover:text-[#3c42de]
                          transform hover:scale-110 transition duration-500"
             onClick={() => {
               Cookies.remove("token");
