@@ -1,3 +1,4 @@
+// this component is for the recipes page
 import React from "react";
 import Navbar from "./navbar";
 

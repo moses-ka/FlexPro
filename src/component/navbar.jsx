@@ -1,4 +1,4 @@
-//navBar.jsx
+//navBar for the app
 
 import { FaNutritionix } from "react-icons/fa";
 import { BsFillPersonFill } from "react-icons/bs";

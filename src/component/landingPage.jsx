@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+// landing page for the app 
 import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import { FiArrowUp } from "react-icons/fi";

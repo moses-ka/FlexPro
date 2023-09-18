@@ -1,4 +1,4 @@
-//nutrition.jsx
+//nutrition component
 
 
 import IntakeCalcaulator from "./intakeCalculator"

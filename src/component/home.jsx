@@ -1,3 +1,4 @@
+// this is the home page of the app
 import React from "react";
 import { useEffect,useState } from "react";
 import { useNavigate } from "react-router";

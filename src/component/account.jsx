@@ -1,3 +1,4 @@
+//acount page where user can update his info
 import React,{useState} from 'react'
 import Cookies from 'js-cookie'
 import Navbar from './navbar'

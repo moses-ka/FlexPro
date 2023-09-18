@@ -1,3 +1,4 @@
+// this component is for adding a task or an exercise
 import React, { useState, useEffect } from "react";
 // import addIcon from "../assets/add.png";
 import Tasks from "./tasks.jsx";

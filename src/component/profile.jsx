@@ -1,3 +1,4 @@
+//profile page
 import React,{useEffect, useState} from "react";
 import Navbar from "./navbar";
 import { BiSolidUserCircle } from "react-icons/bi";

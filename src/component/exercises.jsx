@@ -1,3 +1,4 @@
+// this component is for the exercises page
 import React,{useState} from 'react'
 import { useQuery } from '@tanstack/react-query';
 import Loading from './loading';

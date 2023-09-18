@@ -1,3 +1,4 @@
+// Desc: This file is the protienCalories component of the client side
 import React, { useState, useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 // import { MdAddTask } from "react-icons/md";
@@ -205,7 +206,7 @@ export default function ProtienCalories() {
 
          
           <select
-            className="w-4/6 rounded-2xl  border border-[#4f4fb8] p-2 bg-[#f2f2f2]"
+            className="w-4/6 rounded-2xl  lg:w-full border border-[#4f4fb8] p-2 bg-[#f2f2f2]"
             name="meal"
             id="meal"
             onChange={handSelectingFood}
@@ -233,7 +234,7 @@ export default function ProtienCalories() {
         {selectedFood && (
           <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B] rounded-full p-4 w-full lg:w-full drop-shadow-xl">
             <select
-              className="w-5/6 text-sm rounded-2xl p-2 bg-[#f2f2f2] border border-[#4f4fb8]"
+              className="w-5/6 text-sm lg:w-full rounded-2xl p-2 bg-[#f2f2f2] border border-[#4f4fb8]"
               name="specificMeal"
               id="specificMeal"
               onChange={handleSelectingVaration}

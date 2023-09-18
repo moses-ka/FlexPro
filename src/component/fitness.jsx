@@ -1,4 +1,4 @@
-//fitness.jsx
+//fitness component
 import { useState, useEffect } from "react";
 import AddTask from "./comp/addTask";
 import Navbar from "./navbar";

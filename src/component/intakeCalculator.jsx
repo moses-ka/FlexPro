@@ -1,3 +1,4 @@
+// Desc: This file is the intake calculator component for the nutrition page
 import React, { useState } from 'react';
 
 export default function IntakeCalculator() {

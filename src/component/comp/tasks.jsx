@@ -1,3 +1,4 @@
+// Desc: This file contains the task component
 import React, { useState } from "react";
 import { MdDeleteSweep } from "react-icons/md";
 // import ImgDel from "../assets/x-mark.png";
