@@ -42,7 +42,7 @@ export default function Exercises() {
   // console.log(exercises , 'exercises');
   return (
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
-      <div className='flex flex-col  items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-full  drop-shadow-xl'>
+      <div className='flex flex-col  items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-5/6  drop-shadow-xl'>
       <h2 className="text-2xl font-bold text-center text-white">Exercises</h2>
       {isLoading && <Loading/>}
       {!isLoading &&(<>

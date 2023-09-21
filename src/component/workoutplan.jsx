@@ -48,7 +48,7 @@ const [superFlex,setSuperflex] = useState()
       // console.log(workOutPlan, "workoutplan")
   return (
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-14 w-full  '>
-      <div className='flex flex-col  items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-full  drop-shadow-xl'>
+      <div className='flex flex-col  items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-5/6  drop-shadow-xl'>
       {isLoading && <Loading />}
       {!isLoading && (<>
       

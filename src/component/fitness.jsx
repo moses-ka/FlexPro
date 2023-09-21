@@ -44,7 +44,7 @@ const Fitness = () => {
         id="accordion"
         className="flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12"
       >
-        <div className="flex flex-col justify-center items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl ">
+        <div className="flex flex-col justify-center items-center gap-4 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-5/6 drop-shadow-xl ">
           <h2 className="text-2xl text-white font-bold text-center">Make plan</h2>{" "}
           {/*the title*/}
           <div
