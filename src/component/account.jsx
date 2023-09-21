@@ -5,14 +5,17 @@ import Navbar from './navbar'
 import axios from 'axios'
 import { useQuery } from "@tanstack/react-query";
 import Loading from './loading'
+import { useNavigate } from 'react-router';
 export default function Account() {
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [gender, setGender] = useState('male');
   const [updatAcount, setUpdatAcount] = useState(false);
+  const Navigate = useNavigate();
   const {
     data: userData,refetch: refetchUserData, isLoading , // Use refetch to manually refetch data
+    
   } = useQuery(
     ["userData"], // Specify a unique query key
     async () => {
@@ -56,6 +59,14 @@ export default function Account() {
           refetchUserData()
         }, 1000)
     }
+    const handleDeleteAcount = async () => {
+                        axios.delete(`http://localhost:3016/users/${user?.name}`)
+                        .then( (response) => {
+                          console.log(response);
+                        
+                        })
+        Navigate("/");
+       }
   return (<>
     <Navbar />
     <section className='flex flex-col justify-center items-center p-6 drop-shadow-xl mb-12 h-screen'>
@@ -90,7 +101,7 @@ export default function Account() {
        {updatAcount == true && (
        <div className='w-full'>
        <form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
-      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-full drop-shadow-xl">
         <label className="text-black w-16 text-sm " htmlFor="age">
           Age
         </label>
@@ -109,7 +120,7 @@ export default function Account() {
           }}
         />
       </div>
-      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-full drop-shadow-xl">
         <label className="text-black w-16 text-sm" htmlFor="yourWeight">
           Weight
         </label>
@@ -127,7 +138,7 @@ export default function Account() {
           }}
         />
       </div>
-      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-full drop-shadow-xl">
         <label className="text-black w-16 text-sm" htmlFor="yourHeight">
           Height
         </label>
@@ -145,7 +156,7 @@ export default function Account() {
           }}
         />
       </div>
-      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-[800px] drop-shadow-xl">
+      <div className="flex justify-center items-center gap-2 lg:gap-10  bg-[#f2f2f2] rounded-full p-4 w-full lg:w-full drop-shadow-xl">
         <label className="text-black w-16 text-sm" htmlFor="gender">
           Gender
         </label>
@@ -164,7 +175,7 @@ export default function Account() {
       </div>
      
      
-      <div className="flex flex-col justify-center items-center gap-2 lg:gap-10 rounded-[30px] p-2 w-full lg:w-[800px]">
+      <div className="flex flex-col justify-center items-center gap-2 lg:gap-10 rounded-[30px] p-2 w-full lg:w-full">
         {/* ... Image and additional content */}
         <button
         type="submit"
@@ -186,7 +197,7 @@ export default function Account() {
        
        )} 
        <button 
-        className="flex justify-center items-center gap-2 lg:gap-10  bg-[#9888c2] rounded-full h-10 p-4 w-full lg:w-5/6 drop-shadow-xl hover:text-[#3c42de]  
+        className="flex justify-center items-center gap-2 lg:gap-10  bg-[#9888c2] rounded-full h-10 p-4 w-5/6 lg:w-4/6 drop-shadow-xl hover:text-[#3c42de]  
                       transform hover:scale-110 transition duration-500 border hover:border-[#3c42de]"
                       onClick={() => {
                         setUpdatAcount(!updatAcount);
@@ -198,10 +209,7 @@ export default function Account() {
         font-bold capitalize text-black rounded-3xl
                      w-42 bg-red-400 hover:text-[#3c42de]
                      transform hover:scale-110 border hover:border-[#3c42de] transition duration-500"
-                     onClick={() => {
-         
-                       Navigate("/");
-                      }}
+                     onClick={handleDeleteAcount}
       >
         delete account
       </button>)}

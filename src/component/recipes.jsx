@@ -6,7 +6,7 @@ export default function Recipes() {
   return (
     <>
       <section className="flex flex-col justify-center items-center p-6 gap-6 drop-shadow-xl mb-12 w-full  font-serif">
-        <div className="flex flex-col justify-center items-center gap-6 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-full drop-shadow-xl ">
+        <div className="flex flex-col justify-center items-center gap-6 bg-[#34344d] rounded-[50px] p-4 w-full lg:w-5/6 drop-shadow-xl ">
           <hi className=" text-2xl text-white font-bold text-center">Recipes</hi>
           <div
             className="flex flex-col justify-center items-center gap-2 lg:gap-10  bg-[#29293f]
