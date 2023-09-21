@@ -223,11 +223,11 @@ export default function IntakeCalculator() {
         {dailyCalories !== undefined && dailyCalories !== 0 && dailyProtein !== undefined && dailyProtein !== 0 && (
           <>
             <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B]rounded-full p-4 w-full lg:w-full drop-shadow-xl">
-              <span className="text-center text-sm w-5/6">Daily Calorie Intake about ({dailyCalories} kcal)</span>
+              <span className="text-center text-sm w-5/6 text-white">Daily Calorie Intake about ({dailyCalories} kcal)</span>
             </div>
             {/* Display calculated protein intake */}
             <div className="flex justify-center items-center gap-2 lg:gap-10 bg-[#22223B]rounded-full p-4 w-full lg:w-full drop-shadow-xl">
-              <span className="text-center text-sm w-5/6">Daily Protein Intake about ({dailyProtein} grams)</span>
+              <span className="text-center text-sm w-5/6 text-white">Daily Protein Intake about ({dailyProtein} grams)</span>
             </div>
           </>
         )}
