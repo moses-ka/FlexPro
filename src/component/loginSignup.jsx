@@ -58,7 +58,7 @@ export default function LoginSignup() {
     return (<>
     <Navbar />
       <section id="login-signup" className='flex flex-col justify-center items-center p-6 drop-shadow-xl  mb-12 h-screen'>
-        <div className='flex flex-col justify-center items-center gap-4 bg-[#34344d] rounded-[50px] p-6 w-full h-5/6 mt-2 lg:w-full drop-shadow-xl  '>
+        <div className='flex flex-col justify-center items-center gap-4 bg-[#34344d] rounded-[50px] p-6 w-full h-5/6 mt-2 lg:w-5/6 drop-shadow-xl  '>
              
                     <h1 className='text-4xl font-serif text-white text-center'>Welcome to  Flex Pro</h1>
                     <span className='text-xl font-serif text-white text-center'> Are you ready to embark on a journey towards a healthier, fitter

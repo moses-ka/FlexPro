@@ -31,7 +31,7 @@ export default function ProtienCalories() {
   } = useQuery(
     ["goods"], // Specify a unique query key
     async () => {
-      const res = await fetch("http://localhost:3012/nutrition");
+      const res = await fetch("https://flexpronutrition.cyclic.cloud/nutrition");
       const data = await res.json();
       // console.log("fetched been called");
       return data;

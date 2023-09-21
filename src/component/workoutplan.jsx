@@ -11,7 +11,7 @@ const [superFlex,setSuperflex] = useState()
       } = useQuery(
         ["workoutplan"], // Specify a unique query key
         async () => {
-          const res = await fetch("http://localhost:3014/exercises/workoutplan");
+          const res = await fetch("https://flexprofitness.cyclic.cloud/exercises/workoutplan");
           const data = await res.json();
           // console.log("fetched been called and this is the data",data);
           setStartFlex(data[0])

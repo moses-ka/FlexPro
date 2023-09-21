@@ -60,7 +60,7 @@ export default function Account() {
         }, 1000)
     }
     const handleDeleteAcount = async () => {
-                        axios.delete(`http://localhost:3016/users/${user?.name}`)
+                        axios.delete(`https://flexprouser.cyclic.cloud/users/${user?.name}`)
                         .then( (response) => {
                           console.log(response);
                         

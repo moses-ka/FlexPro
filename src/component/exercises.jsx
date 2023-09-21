@@ -16,7 +16,7 @@ export default function Exercises() {
   } = useQuery(
     ["exercises"], // Specify a unique query key
     async () => {
-      const res = await fetch("http://localhost:3014/exercises");
+      const res = await fetch("https://flexprofitness.cyclic.cloud/exercises");
       const data = await res.json();
       // console.log("fetched been called");
       return data;

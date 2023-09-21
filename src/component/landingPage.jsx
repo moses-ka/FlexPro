@@ -10,7 +10,7 @@ export default function LandingPage() {
   const [message, setMessage] = useState("");
    const submitMessage = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3016/users/contact", {
+    axios.post("https://flexprouser.cyclic.cloud/users/contact", {
       name: name,
       email: email,
       message: message,
