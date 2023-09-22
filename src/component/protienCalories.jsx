@@ -344,12 +344,12 @@ export default function ProtienCalories() {
                 <div className="flex justify-center items-center gap-2" key={index}>
                   {item.name}{" "}
                   {parseFloat(item.calories.match(/\d+/)[0]) *
-                    FoodPerDayMultiplier[index]} (gr)
+                    FoodPerDayMultiplier[index]} (kcal)
                   {/* {This is extracting the numeric value from the item.protein string using a regular expression (/\d+/). The match method with the regular expression returns an array with all the matches found in the string. Since we are only interested in the first match, we access it using [0]. The extracted value is then parsed as a floating-point number using parseFloat.} */}
                 </div>
               ))}
                  <span className="text-white text-center self-center">
-                Total of  {totalIntake.calories} grams
+                Total of  {totalIntake.calories} kcal
                 </span>
             </div>
           </div>

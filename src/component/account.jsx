@@ -19,7 +19,7 @@ export default function Account() {
   } = useQuery(
     ["userData"], // Specify a unique query key
     async () => {
-      const res = await fetch(`http://localhost:3016/users/${user?.name}`);
+      const res = await fetch(`https://flexprouser.cyclic.cloud/users/${user?.name}`);
       const data = await res.json();
       // console.log("fetched been called" , data);
       return data;
@@ -37,7 +37,7 @@ export default function Account() {
     const handleSubmit = async(e) => {
      
       e.preventDefault();
-        axios.put(`http://localhost:3016/users/${user?.name}`, {
+        axios.put(`https://flexprouser.cyclic.cloud/users/${user?.name}`, {
           name: user.name,
           email: user.email,
           age: age,
