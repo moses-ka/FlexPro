@@ -24,5 +24,8 @@ FlexPro is a full-stack fitness application designed to help users calculate the
 *** back end 
 https://github.com/moses-ka/flexProServers
 
+link to the app 
+https://flexprodesign.tech/
+
 
 
